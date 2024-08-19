@@ -1,0 +1,1072 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  {%load static%}
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smile Club</title>
+    {% comment %} <link
+      rel="shortcut icon"
+      href="https://sidcupfamilygolf.com/wp-content/themes/puttosaurus/favicons/favicon-32x32.png"
+      type="image/x-icon"
+    /> {% endcomment %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    {% comment %} <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    /> {% endcomment %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+
+    <link rel="stylesheet" href="{% static 'style.css' %}" /></head>
+    <style>
+        *{
+            box-sizing: border-box;
+            margin:0;
+            padding: 0;
+        }
+        body {
+        --color1: #fff;
+        --color2: #181818;
+      }
+      footer {
+        position: relative;
+        width: 100%;
+        background: black;
+        min-height: 100px;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+      }
+      footer .social_icon,
+      footer .menu {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0;
+        flex-wrap: wrap;
+      }
+
+
+      footer .social_icon li,
+      footer .menu li {
+        list-style: none;
+      }
+      footer .social_icon li a {
+        font-size: 2em;
+        color: #fff;
+        margin: 0 10px;
+        display: inline-block;
+        transition: 0.5s;
+      }
+      footer .social_icon li a:hover {
+        transform: translateY(-10);
+      }
+      footer .menu li a {
+        font-size: 1.2em;
+        color: #fff;
+        margin: 0 10px;
+        display: inline-block;
+        text-decoration: none;
+        opacity: 0.75;
+      }
+      footer .menu li a:hover {
+        opacity: 1;
+      }
+      footer p {
+        color: #fff;
+        text-align: center;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+      }
+      footer .wave {
+        position: absolute;
+        top: -100px;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        background: url('https://res.cloudinary.com/dmnep85ym/image/upload/v1713783080/wave_j0z4mz.png'); /* Use the wave image as background */
+        background-size: 1000px 100px;
+      }
+      footer .wave#wave1 {
+        z-index: 1000;
+        opacity: 1;
+        bottom: 0;
+        animation: animateWave 4s linear infinite;
+      }
+      footer .wave#wave2 {
+        z-index: 999;
+        opacity: 0.5;
+        bottom: 10px;
+        animation: animateWave_02 4s linear infinite;
+      }
+      footer .wave#wave3 {
+        z-index: 1000;
+        opacity: 0.2;
+        bottom: 15px;
+        animation: animateWave 3s linear infinite;
+      }
+      footer .wave#wave4 {
+        z-index: 999;
+        opacity: 0.7;
+        bottom: 20px;
+        animation: animateWave_02 3s linear infinite;
+      }
+      @keyframes animateWave {
+        0% {
+          background-position-x: 1000px;
+        }
+        100% {
+          background-position-x: 0px;
+        }
+      }
+      @keyframes animateWave_02 {
+        0% {
+          background-position-x: 0px;
+        }
+        100% {
+          background-position-x: 1000px;
+        }
+      }
+      .page4_header {
+        width: 100%;
+        text-align: center;
+        margin-top: 250px;
+        margin-bottom: 0px;
+        font-size: 200px;
+      }
+     header{
+        width:100%;
+        height:100px;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        z-index: 99;
+        box-shadow: 0 0 10px #000;
+        background: rgba(0,0,0,0.5);
+
+     }
+     #chk1{
+        display:none;
+     }
+     i{
+        color:#fff;
+        cursor:pointer;
+     }
+     header .logo{
+        flex:1;
+        color:#fff;
+        margin-left:50px;
+        text-transform:uppercase;
+        font-size: 15px;
+     }
+     header .search-box{
+        flex:1;
+        position: relative;
+        
+     }
+     .search-box input{
+        width:100%;
+        height:40px;
+        border:none;
+        outline: none;
+        background: #f2f2f2;
+        border-radius: 30px;
+        color:grey;
+        font-size: 16px;
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 40px;
+       
+     }
+     .search-box button{
+        cursor:pointer;
+        width:40px;
+        height: 40px;
+        border-radius: 30px;
+        border: none;
+        position: absolute;
+        top:0;
+        right:0;
+        transform: scale(0.9);
+        background: rgb(14, 14, 14);
+     }
+     header ul{
+        flex:2;
+        display: flex;
+        justify-content: space-between;
+     }
+     header ul li{
+        list-style: none;
+     }
+     header ul li a{
+        text-decoration: none;
+        color:#fff;
+        font-weight: 600;
+        text-transform: uppercase;
+        padding:10px 15px;
+     }
+     header ul li a:hover{
+        border-bottom: 2px solid cadetblue;
+     }
+     header .menu{
+        font-size:2.5rem;
+        display: none;
+     }
+     @media(max-width:1000px){
+        .search-box button{
+            position: absolute;
+        }
+        header ul{
+            position: fixed;
+            top:100px;
+            right:-100%;
+            background: rgba(0,0,0,0.5);
+            height: calc(100vh - 100px);
+            width:50%;
+            flex-direction: column;
+            align-items: center;
+            transition: right 0.5s linear;
+        }
+        header .menu{
+            display: block;
+            width:100px;
+            text-align: center;
+        }
+        #chk1:checked ~ ul{
+            right:0;
+        }
+     }
+     @media(max-width:600px){
+        header .logo{
+            font-size: 10px;
+            margin-left: 8px;
+        }
+        header ul{
+            width:100%;
+        }
+     }
+     .logo img{
+        height:40px;
+        width:40px;
+        margin-top: 20px;
+        margin-left: 25px;
+     }
+     /* ////////////// */
+     @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
+
+:root {
+  --color: #3c3163;
+  --transition-time: 0.5s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Open Sans', sans-serif;
+  background: #fafafa;
+}
+
+a {
+  color: inherit;
+}
+
+.cards-wrapper {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 4rem;
+  padding: 4rem;
+  margin: auto;
+  flex-wrap: wrap;
+}
+.card {
+  font-family: 'Heebo', sans-serif;
+  --bg-filter-opacity: 0.5;
+  /* background-image: url('https://source.unsplash.com/600x400/?computer'); */
+  height: 20em;
+  background-color: rgb(249, 124, 15);
+  object-fit: cover;
+  width: 15em;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 1em;
+  padding: 1em;
+  display: flex;
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 5em -1em black;
+  transition: all var(--transition-time);
+  position: relative;
+  overflow: hidden;
+  border: 10px solid #ccc;
+  text-decoration: none;
+  margin:auto !important;
+  height: 25rem !important;
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.card p {
+  font-size: 0.75em;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 0.5em;
+  line-height: 2em;
+}
+
+.card .tags {
+  display: flex;
+}
+
+
+.card:before,
+.card:after {
+  content: '';
+  transform: scale(0);
+  transform-origin: top left;
+  border-radius: 50%;
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  z-index: -5;
+  transition: all var(--transition-time);
+  transition-timing-function: ease-in-out;
+}
+
+.card:before {
+  background: #ddd;
+  width: 250%;
+  height: 250%;
+}
+
+.card:after {
+  background: white;
+  width: 200%;
+  height: 200%;
+}
+
+.card:hover {
+ transform: scale(1.2);
+}
+
+.card-grid-space .num {
+  font-size: 3em;
+  margin-bottom: 1.2rem;
+  margin-left: 1rem;
+}
+
+.info {
+  font-size: 1.2em;
+  display: flex;
+  padding: 1em 3em;
+  height: 3em;
+}
+
+.info img {
+  height: 3em;
+  margin-right: 0.5em;
+}
+
+.info h1 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+/* MEDIA QUERIES */
+@media screen and (max-width: 1285px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .info {
+    justify-content: center;
+  }
+  .card-grid-space .num {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cards-wrapper {
+    padding: 4rem 2rem;
+  }
+  .card {
+    max-width: calc(100vw - 4rem);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .info {
+    display: block;
+    text-align: center;
+  }
+  .info h1 {
+    margin: 0;
+  }
+}
+
+     /* /////////////// */
+     /* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #ebecf0;
+  font-family: "Open Sans", sans-serif;
+  min-height: 100vh;
+
+  a {
+    text-decoration: none;
+    color: #172b4d;
+  }
+
+  h1 {
+    font-family: "Song Myung", serif;
+  }
+}
+
+/* DEFAULT STYLE */
+:root {
+  font-size: 16px;
+  --card-img-height: 200px;
+}
+.card-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  transition: all 200ms ease-in-out;
+  margin-bottom: 300px;
+}
+
+.card {
+  align-self: flex-start;
+  position: relative;
+  width: 325px;
+  min-width: 275px;
+  margin: 1.25rem 0.75rem;
+  background: rgb(22, 22, 22);
+  transition: all 300ms ease-in-out;
+
+  .card-img {
+    visibility: hidden;
+    width: 100%;
+    height: var(--card-img-height);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .card-img-hovered {
+    --card-img-hovered-overlay: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)
+    );
+    transition: all 350ms ease-in-out;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    height: var(--card-img-height);
+    top: 0;
+  }
+
+  .card-info {
+    position: relative;
+    padding: 0.75rem 1.25rem;
+    transition: all 200ms ease-in-out;
+
+    .card-about {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      transition: all 200ms ease-in-out;
+
+      .card-tag {
+        width: 60px;
+        max-width: 100px;
+        padding: 0.2rem 0.5rem;
+        font-size: 12px;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        background: #505f79;
+        color: #fff;
+
+        &.tag-news {
+          background: #36b37e;
+        }
+
+        &.tag-deals {
+          background: #ffab00;
+        }
+
+        &.tag-politics {
+          width: 71px;
+          background: #ff5630;
+        }
+      }
+    }
+
+    .card-title {
+      z-index: 10;
+      font-size: 1.5rem;
+      padding-bottom: 0.75rem;
+      transition: all 350ms ease-in-out;
+    }
+
+    .card-creator {
+      padding-bottom: 0.75rem;
+      transition: all 250ms ease-in-out;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 15px 35px rgba(227, 252, 239, 0.1),
+      0px 5px 15px rgba(0, 0, 0, 0.07);
+    transform: scale(1.025);
+
+    .card-img-hovered {
+      --card-img-hovered-overlay: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.65)
+      );
+      height: 100%;
+    }
+
+    .card-about,
+    .card-creator {
+      opacity: 0;
+    }
+
+    .card-info {
+      background-color: transparent;
+    }
+
+    .card-title {
+      color: #ebecf0;
+       margin-bottom: -40px;
+      transform: translate(0,40px);
+    }
+  }
+}
+
+
+
+.ourBlogs{
+  border: 2px solid black;
+  background-color: black;
+  color:white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  font-size: 54px;
+}
+.card.card-1 {
+  background-image: url(https://www.pexels.com/photo/woman-standing-on-cliff-16953646/); /* Replace 'path_to_your_image.jpg' with the path to your image */
+  background-size: cover; /* Ensure the background image covers the entire card */
+  background-position: center; /* Center the background image */
+}
+
+/* //////////////// */
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 1200px;
+  margin-block: 2rem;
+  gap: 2rem;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.card_new {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  overflow: hidden;
+ 
+  border-radius: 1em;
+  background: black;
+
+  margin-right: 35px;
+  margin-left: 35px;
+}
+
+.card__body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  gap: .5rem;
+}
+
+.tag {
+  align-self: flex-start;
+  padding: .25em .75em;
+  border-radius: 1em;
+  font-size: .75rem;
+}
+
+.tag + .tag {
+  margin-left: .5em;
+}
+
+.tag-blue {
+  background: #56CCF2;
+  background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+  color: #fafafa;
+}
+
+.tag-brown {
+  background: #D1913C;
+  background: linear-gradient(to bottom, #FFD194, #D1913C);
+  color: #fafafa;
+}
+
+.tag-red {
+  background: #cb2d3e;
+  background: linear-gradient(to bottom, #ef473a, #cb2d3e);
+  color: #fafafa;
+}
+
+.card__body h4 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.card__footer {
+  display: flex;
+  padding: 1rem;
+  margin-top: auto;
+}
+
+.user {
+  display: flex;
+  gap: .5rem;
+}
+
+.user__image {
+  border-radius: 50%;
+}
+
+.user__info > small {
+  color: #666;
+}
+.card_new_header{
+ font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  font-size: 70px;
+}
+@media screen and (max-width: 700px) {
+  #page4 {
+    display: flex; /* Display the page4 container as a flex container */
+    flex-direction: column; /* Stack elements vertically */
+    margin: 20px; /* Add some margin between each elem */
+    height: 300vh;
+  }
+  .elem {
+    display: block; /* Display each elem class in a column */
+   /* Add some margin between each elem */
+    margin-top: 50px; 
+    margin-bottom: 50px;
+    width:300px ;
+    height: 500px ;
+    
+  }
+  .page4_header{
+    margin-top: 230px !important;
+    font-size: 500px;
+    font-weight: bold;
+    margin-bottom: 0px;
+  }
+  .elem h2{
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
+.increase{
+  font-size: 50px  !important;
+  font-weight: bold   !important;
+}
+/* ///////////// */
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card2 {
+  width: 20rem;
+  height: 30rem;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 100px;
+  box-shadow: 0 10px 30px 5px rgba(0, 0, 0, 0.2);
+ 
+  img {
+    position: absolute;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.9;
+    transition: opacity .2s ease-out;
+  }
+
+  h2 {
+    position: absolute;
+    inset: auto auto 30px 30px;
+    margin: 0;
+    transition: inset .3s .3s ease-out;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+  }
+  
+  p, a {
+    position: absolute;
+    opacity: 0;
+    max-width: 80%;
+    transition: opacity .3s ease-out;
+  }
+  
+  p {
+    inset: auto auto 80px 30px;
+  }
+  
+  a {
+    inset: auto auto 40px 30px;
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  &:hover h2 {
+    inset: auto auto 220px 30px;
+    transition: inset .3s ease-out;
+  }
+  
+  &:hover p, &:hover a {
+    opacity: 1;
+    transition: opacity .5s .1s ease-in;
+  }
+  
+  &:hover img {
+    transition: opacity .3s ease-in;
+    opacity: 1;
+  }
+
+}
+
+.material-symbols-outlined {
+  vertical-align: middle;
+}
+@media screen and (max-width: 768px) {
+  #page4 {
+    width: 100%; /* Adjust width as needed */
+    margin: auto; /* Center the container horizontally */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+    height: 100vh;
+  }
+
+  #page4 main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+
+    </style>
+  </head>
+
+  {%include 'navbar.html' %}
+  <body>
+    {% comment %} <div id="cursor"></div>
+    <div id="cursor-blur"></div> {% endcomment %}
+
+    <video autoplay loop muted src="https://res.cloudinary.com/dmnep85ym/video/upload/v1713779156/help_f6ejrf.mp4"></video>
+    <div id="main">
+      <div id="page1">
+        <h2>Welcome to </h2>
+        <p class="increase">SMILE CLUB</p>
+        <h2>ANCIENT SCIENCE AND TECHNOLOGY FOR MODERN INDIA LIFE ENLIGHTENMENT
+          </h2>
+        <p>Lets have a smile of satisfaction</p>
+        <div id="arrow">
+          <i class="ri-arrow-down-line"></i>
+        </div>
+      </div>
+      <div id="page2">
+        <div id="scroller">
+          <div id="scroller-in">
+            <h4>WELCOME TO SMILE CLUB FAMILY !</h4>
+          </div>
+          <div id="scroller-in">
+            <h4>WELCOME TO SMILE CLUB FAMILY !</h4>
+          </div>
+        </div>
+        <div id="about-us">
+          <!-- <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-1-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
+                    alt="" /> -->
+          <div id="about-us-in">
+            <h3>Our Principle</h3>
+            <p>
+             Svasmai svalpam samajaya sarvasvam |
+            </p>
+          </div>
+        </div>
+       
+        <section class="cards-wrapper">
+          <div class="card-grid-space">
+            
+            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
+              <div>
+                <h1> Vision</h1>
+                <p>Our principles are our guiding light in crafting our vision statement,it is to celebrate and distribute the joy of the Indian culture.</p>
+                
+              </div>
+            </a>
+          </div>
+          <div class="card-grid-space">
+           
+            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');  ">
+              <div>
+                <h1>About us</h1>
+                <p>A culturally aware club sharing joy and greatness through our culture. Serving society brings us immense satisfaction.
+                </p>
+               
+              </div>
+            </a>
+          </div>
+          <div class="card-grid-space">
+            
+            <a class="card" href="#" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');  ">
+              <div>
+                <h1>Content</h1>
+                <p>Our content explores diverse topics, offering insightful perspectives and fostering intellectual curiosity.</p>
+                
+              </div>
+            </a>
+          </div>
+          <div class="card-grid-space">
+            
+            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
+              <div>
+                <h1>Events</h1>
+                <p>Our events spark curiosity and connection, offering enriching experiences for all. Join us for engaging gatherings that inspire and educate.</p>
+                
+              </div>
+            </a>
+          </div>
+          <div class="card-grid-space">
+            
+            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
+              <div>
+                <h1>Courses</h1>
+                <p>Our courses provide comprehensive learning experiences, tailored to meet diverse interests and skill levels.</p>
+               
+              </div>
+            </a>
+          </div>
+          <div class="card-grid-space">
+            
+            <a class="card" style="--bg-img: url(''); ">
+              <div>
+                <h1>Gallery</h1>
+                <p>Explore our vibrant gallery showcasing the essence of our community, captured in moments of creativity, diversity, and shared experiences.</p>
+                
+              </div>
+            </a>
+          </div>
+          </section>
+       
+        <!-- //////////////// -->
+       <div class="card_new_header">
+        <p>Our Latest Blogs</p>
+       </div>
+        <div class="container">
+          {% for blog in latest_blogs %}
+          <div class="card_new">
+            <div class="card__header">
+              <a href="{% url 'post-detail' blog.id %}" style="text-decoration: none; color: inherit;">
+              <img src="{{ blog.cover_image.url }}" alt="card__image" class="card__image" width="600">
+              </a>
+            </div>
+            <div class="card__body">
+              <div class="tag">
+                {% for tag in blog.tags.all %}
+              <span class="tag tag-blue">{{ tag }}</span> <!-- Changed blog.tags to tag -->
+              {% if not forloop.last %},{% endif %}
+              {% endfor %}
+            </div>
+            <a href="{% url 'post-detail' blog.id %}" style="text-decoration: none; color: inherit;">
+
+            <h4>{{ blog.title }}</h4>
+            <p>{{ blog.abstract }}</p>
+            </a>
+            </div>
+          </div>
+        {% comment %} </a> {% endcomment %}
+          {% endfor %}
+
+        </div>
+        
+  
+        
+      <div id="page3">
+        <p>
+          {{ quote.quote }}
+        </p>
+        <img
+          id="colon1"
+          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg"
+          alt=""
+        />
+        <img
+          id="colon2"
+          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg"
+          alt=""
+        />
+      </div> 
+      <div id="page4">
+        <h1 class="page4_header">OUR ACHIEVEMENTS</h1>
+        {% for achievement in achievements %}
+
+        <div class="elem">
+          <h2>{{ achievement.name }}</h2>
+          <img src="{{ achievement.image.url }}" alt="" />
+        </div>
+        {% endfor %}
+       
+      </div>
+      <div id="page4">
+        <h1 class="page4_header">Our Recent events</h1>
+        {% for event in latest_events %}
+
+        <main>
+          <div class = "card2">
+            <img src="{{ event.image.url }}" alt="">
+            <div class="card-content2">
+              <h2>
+                {{ event.name }}              </h2>
+              <p>
+                {{ event.tagline }}              </p>
+              
+            </div>
+          </div>
+        </main>
+        {% endfor %}
+
+      </div>
+    </div>
+
+    
+    
+    <footer>
+      <div class="waves">
+        <div class="wave" id="wave1"></div>
+        <div class="wave" id="wave2"></div>
+        <div class="wave" id="wave3"></div>
+        <div class="wave" id="wave4"></div>
+      </div>
+      <ul class="social_icon">
+          <li><a href="https://www.linkedin.com/company/smile-club-nitk/"><i class="fab fa-linkedin"></i></a></li>
+          <li> <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn"><i class="fab fa-youtube"></i></a></li>
+            <li> <a href="https://www.instagram.com/p/C52tiEtLNU5/?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram"></i></a></li>
+      </ul>
+      <ul class="menu">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'team-list' %}">About us </a></li>
+        <li><a href="{% url 'blogs-list' %}">Blog</a></li>
+        <li><a href="{% url 'event-list' %}">Timeline</a></li>
+        <li><a href="{% url 'gallery' %}">Gallery</a></li>
+        <li><a href="{% url 'display_youtube_videos' %}">Videos</a></li>
+        
+      </ul>
+      <p>@2024 Smile Club | All rights reserved</p>
+    </footer>
+
+    {% comment %} <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+      integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/ScrollTrigger.min.js"
+      integrity="sha512-IHDCHrefnBT3vOCsvdkMvJF/MCPz/nBauQLzJkupa4Gn4tYg5a6VGyzIrjo6QAUy3We5HFOZUlkUpP0dkgE60A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="{% static 'index.js' %}"></script></body>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script> {% endcomment %}
+  </body>
+</html>
