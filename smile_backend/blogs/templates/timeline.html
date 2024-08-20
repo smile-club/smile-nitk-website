@@ -339,7 +339,7 @@
         color: #fff;
         font-weight: 600;
         text-transform: uppercase;
-        {% comment %} padding: 10px 15px; {% endcomment %}
+        /* {% comment %} padding: 10px 15px; {% endcomment %} */
     }
     
     header ul li a:hover {
@@ -411,39 +411,9 @@
     }
     </style>
   </head>
-  
+  {%include 'navbar.html' %}
   <body>
-    <div class="navbar_t">
-      <div class = "nav">
-        <header>
-     <input type="checkbox" name="" id="chk1">
-     <div class ="lo_go">
-         <img src="https://res.cloudinary.com/dmnep85ym/image/upload/v1713867500/for_black_bgm_ioxgoi.png" alt="Smile Club Logo">
-         <!-- Insert your logo image here -->
-     </div>
-     <ul>
-         <li><a href="{% url 'home' %}">Home</a></li>
-         <li><a href="{% url 'team-list' %}">About us</a></li>
-         <li><a href="{% url 'blogs-list' %}">Blog</a></li>
-         <li><a href="{% url 'event-list' %}">Timeline</a></li>
-         <li><a href="{% url 'gallery' %}">Gallery</a></li>
-         <li><a href="{% url 'display_youtube_videos' %}">Videos</a></li>
-         <div class="icons">
-         <li>
-          <a href="https://www.linkedin.com/company/smile-club-nitk/"><i class="fab fa-linkedin"></i></a>
-          <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn"><i class="fab fa-youtube"></i></a>
-          <a href="https://www.instagram.com/p/C52tiEtLNU5/?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram"></i></a>
-         </li>
-         </div>
-     </ul>
-     <div class="menu">
-         <label for="chk1">
-             <i class="fa fa-bars"></i>
-         </label>
-     </div>
- </header>
-     </div>
-    </div>
+    
     <div class="timeline">
       {% for event in events %}
           <a href="{% url 'event_detail' event.id %}" style="text-decoration: none; color: inherit;">

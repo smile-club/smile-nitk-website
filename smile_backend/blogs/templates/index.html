@@ -25,9 +25,11 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     /> {% endcomment %}
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
 
-    <link rel="stylesheet" href="{% static 'style.css' %}" /></head>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
     <style>
         *{
             box-sizing: border-box;
@@ -38,128 +40,8 @@
         --color1: #fff;
         --color2: #181818;
       }
-      footer {
-        position: relative;
-        width: 100%;
-        background: black;
-        min-height: 100px;
-        padding: 20px 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      footer .social_icon,
-      footer .menu {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0;
-        flex-wrap: wrap;
-      }
-
-
-      footer .social_icon li,
-      footer .menu li {
-        list-style: none;
-      }
-      footer .social_icon li a {
-        font-size: 2em;
-        color: #fff;
-        margin: 0 10px;
-        display: inline-block;
-        transition: 0.5s;
-      }
-      footer .social_icon li a:hover {
-        transform: translateY(-10);
-      }
-      footer .menu li a {
-        font-size: 1.2em;
-        color: #fff;
-        margin: 0 10px;
-        display: inline-block;
-        text-decoration: none;
-        opacity: 0.75;
-      }
-      footer .menu li a:hover {
-        opacity: 1;
-      }
-      footer p {
-        color: #fff;
-        text-align: center;
-        margin-top: 15px;
-        margin-bottom: 10px;
-        font-size: 1.1em;
-      }
-      footer .wave {
-        position: absolute;
-        top: -100px;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background: url('https://res.cloudinary.com/dmnep85ym/image/upload/v1713783080/wave_j0z4mz.png'); /* Use the wave image as background */
-        background-size: 1000px 100px;
-      }
-      footer .wave#wave1 {
-        z-index: 1000;
-        opacity: 1;
-        bottom: 0;
-        animation: animateWave 4s linear infinite;
-      }
-      footer .wave#wave2 {
-        z-index: 999;
-        opacity: 0.5;
-        bottom: 10px;
-        animation: animateWave_02 4s linear infinite;
-      }
-      footer .wave#wave3 {
-        z-index: 1000;
-        opacity: 0.2;
-        bottom: 15px;
-        animation: animateWave 3s linear infinite;
-      }
-      footer .wave#wave4 {
-        z-index: 999;
-        opacity: 0.7;
-        bottom: 20px;
-        animation: animateWave_02 3s linear infinite;
-      }
-      @keyframes animateWave {
-        0% {
-          background-position-x: 1000px;
-        }
-        100% {
-          background-position-x: 0px;
-        }
-      }
-      @keyframes animateWave_02 {
-        0% {
-          background-position-x: 0px;
-        }
-        100% {
-          background-position-x: 1000px;
-        }
-      }
-      .page4_header {
-        width: 100%;
-        text-align: center;
-        margin-top: 250px;
-        margin-bottom: 0px;
-        font-size: 200px;
-      }
-     header{
-        width:100%;
-        height:100px;
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        z-index: 99;
-        box-shadow: 0 0 10px #000;
-        background: rgba(0,0,0,0.5);
-
-     }
+     
+     
      #chk1{
         display:none;
      }
@@ -174,12 +56,15 @@
         text-transform:uppercase;
         font-size: 15px;
      }
-     header .search-box{
+     #about-us p{
+      margin-top:-1em;
+     }
+     /* header .search-box{
         flex:1;
         position: relative;
         
-     }
-     .search-box input{
+     } */
+     /* .search-box input{
         width:100%;
         height:40px;
         border:none;
@@ -192,8 +77,8 @@
         padding-left: 5px;
         padding-right: 40px;
        
-     }
-     .search-box button{
+     } */
+     /* .search-box button{
         cursor:pointer;
         width:40px;
         height: 40px;
@@ -204,68 +89,34 @@
         right:0;
         transform: scale(0.9);
         background: rgb(14, 14, 14);
-     }
-     header ul{
+     } */
+     /* header ul{
         flex:2;
         display: flex;
-        justify-content: space-between;
-     }
-     header ul li{
+        justify-content: space-around;
+     } */
+     /* header ul li{
         list-style: none;
-     }
-     header ul li a{
+     } */
+     /* header ul li a{
         text-decoration: none;
         color:#fff;
-        font-weight: 600;
+        font-weight: 500;
         text-transform: uppercase;
         padding:10px 15px;
-     }
-     header ul li a:hover{
-        border-bottom: 2px solid cadetblue;
-     }
+     } */
+/*      
      header .menu{
         font-size:2.5rem;
         display: none;
-     }
-     @media(max-width:1000px){
-        .search-box button{
-            position: absolute;
-        }
-        header ul{
-            position: fixed;
-            top:100px;
-            right:-100%;
-            background: rgba(0,0,0,0.5);
-            height: calc(100vh - 100px);
-            width:50%;
-            flex-direction: column;
-            align-items: center;
-            transition: right 0.5s linear;
-        }
-        header .menu{
-            display: block;
-            width:100px;
-            text-align: center;
-        }
-        #chk1:checked ~ ul{
-            right:0;
-        }
-     }
-     @media(max-width:600px){
-        header .logo{
-            font-size: 10px;
-            margin-left: 8px;
-        }
-        header ul{
-            width:100%;
-        }
-     }
-     .logo img{
+     } */
+    
+     /* .logo img{
         height:40px;
         width:40px;
         margin-top: 20px;
         margin-left: 25px;
-     }
+     } */
      /* ////////////// */
      @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
 
@@ -394,45 +245,6 @@ a {
 .info h1 {
   font-size: 1em;
   font-weight: normal;
-}
-
-/* MEDIA QUERIES */
-@media screen and (max-width: 1285px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .info {
-    justify-content: center;
-  }
-  .card-grid-space .num {
-    margin-left: 0;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .cards-wrapper {
-    padding: 4rem 2rem;
-  }
-  .card {
-    max-width: calc(100vw - 4rem);
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .info {
-    display: block;
-    text-align: center;
-  }
-  .info h1 {
-    margin: 0;
-  }
 }
 
      /* /////////////// */
@@ -701,43 +513,38 @@ img {
   color: #666;
 }
 .card_new_header{
- font-weight: bold;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  font-size: 70px;
+ 
+  margin-bottom: .7em;
+  font-size: 50px;
+   
 }
-@media screen and (max-width: 700px) {
-  #page4 {
-    display: flex; /* Display the page4 container as a flex container */
-    flex-direction: column; /* Stack elements vertically */
-    margin: 20px; /* Add some margin between each elem */
-    height: 300vh;
-  }
-  .elem {
-    display: block; /* Display each elem class in a column */
-   /* Add some margin between each elem */
-    margin-top: 50px; 
-    margin-bottom: 50px;
-    width:300px ;
-    height: 500px ;
+
+.prin,.card_new_header{
+  margin-top:2em;
+  text-shadow: 0 0 5px hsla(0, 10%, 94%, 0.097),  
+                 0 0 10px #f0eded13,
+                 0 0 15px #b8b0b800, 
+                 0 0 20px #87838700, 
+                 0 0 25px #aaaaa764, 
+                 0 0 30px #cfcfc528, 
+                 0 0 35px #d6d6d31e;
     
-  }
-  .page4_header{
-    margin-top: 230px !important;
-    font-size: 500px;
-    font-weight: bold;
-    margin-bottom: 0px;
-  }
-  .elem h2{
-    font-size: 30px;
-    font-weight: bold;
-  }
 }
 .increase{
   font-size: 50px  !important;
   font-weight: bold   !important;
+  text-shadow: 0 0 5px hsla(0, 10%, 94%, 0.097),  
+                 0 0 10px #f0eded13,
+                 0 0 15px #b8b0b800, 
+                 0 0 20px #87838700, 
+                 0 0 25px #aaaaa764, 
+                 0 0 30px #cfcfc553, 
+                 0 0 35px #d6d6d33a; 
+  
 }
 /* ///////////// */
 
@@ -817,6 +624,135 @@ main {
 
 }
 
+.link{
+  margin-top: 1.5em;
+  display: flex;
+  gap: 1em;
+}
+
+#main p{
+  font-size: 1em;
+}
+
+.bg{
+  background: linear-gradient(to bottom, transparent, rgba(219, 189, 133, 0.296),rgba(225, 195, 139, 0.139), black);
+}
+
+.footer{
+    height: 26em;
+    background: linear-gradient(to top , rgb(2, 2, 24), black);
+    overflow: hidden;
+}
+
+/* conclusion and links */
+.footer-text{
+    height:21em;
+    display:flex;
+    justify-content: space-around;
+    padding-top: 3em;
+    font-size: small;
+}
+ 
+.conclude{ 
+    width:29%;
+
+
+}
+
+.conclude-text{
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin: 1.5em 0;
+}
+
+.list-header{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.quick-links,.download-app,.company{
+    list-style-type:none;
+    line-height:2.5em;
+}
+
+.list-points,.hiring{
+    font-size:1.1em;
+}
+
+.list-points:hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+.hiring{
+    span{
+        color:#7185f3;
+    }
+    span:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+/* social media links */
+.social-media{
+    
+    height:4em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.bg-circle{
+    margin-top:1.5em;
+    background-color: white;
+    height:2em;
+    width:2em;
+    border-radius: 50%;
+   
+    i{
+       
+        margin-left:.45em;
+        font-size: 1em;
+        color: #000;
+    }
+
+}
+
+/* company name */
+.smile{
+    
+    cursor:default;
+    text-align: center;
+    color: #f0eded3a;
+    font-size: 9.5em; 
+    letter-spacing: .2em; 
+    text-shadow: 0 0 5px hsla(0, 10%, 94%, 0.097),  
+                 0 0 10px #f0eded13,
+                 0 0 15px #b8b0b800, 
+                 0 0 20px #87838700, 
+                 0 0 25px #aaa7aa00, 
+                 0 0 30px #cfc5cf00, 
+                 0 0 35px #d6d3d600; 
+    
+}
+
+.logo img{
+  height: 100px;
+  width: 100px;
+  background: radial-gradient(circle, rgba(182, 182, 177, 0.473) 1%, rgba(55, 55, 53, 0.473), black 99%);
+  
+}
+.logo{
+ 
+  margin-left: 3.5em;
+}
+
+#page1{
+  padding-top:2em;
+ 
+}
+
 .material-symbols-outlined {
   vertical-align: middle;
 }
@@ -834,9 +770,115 @@ main {
     align-items: center;
     justify-content: center;
   }
+  #main p{
+  font-size: .7em;
+  }
+}
+/* MEDIA QUERIES */
+@media screen and (max-width: 1285px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
+@media screen and (max-width: 900px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .info {
+    justify-content: center;
+  }
+  .card-grid-space .num {
+    margin-left: 0;
+    text-align: center;
+  }
+  #main h2{
+    font-size: 1.5em;
+  }
+}
 
+@media screen and (max-width: 500px) {
+  .cards-wrapper {
+    padding: 4rem 2rem;
+  }
+  .card {
+    max-width: calc(100vw - 4rem);
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .info {
+    display: block;
+    text-align: center;
+  }
+  .info h1 {
+    margin: 0;
+  }
+  #main p{
+  font-size: .5em;
+  }
+}
+@media screen and (max-width: 700px) {
+  #page4 {
+    display: flex; /* Display the page4 container as a flex container */
+    flex-direction: column; /* Stack elements vertically */
+    margin: 20px; /* Add some margin between each elem */
+    height: 300vh;
+  }
+  @media(max-width:1000px){
+        .search-box button{
+            position: absolute;
+        }
+        header ul{
+            position: fixed;
+            top:100px;
+            right:-100%;
+            background: rgba(0,0,0,0.5);
+            height: calc(100vh - 100px);
+            width:50%;
+            flex-direction: column;
+            align-items: center;
+            transition: right 0.5s linear;
+        }
+        header .menu{
+            display: block;
+            width:100px;
+            text-align: center;
+        }
+        #chk1:checked ~ ul{
+            right:0;
+        }
+     }
+     @media(max-width:600px){
+        header .logo{
+            font-size: 10px;
+            margin-left: 8px;
+        }
+        header ul{
+            width:100%;
+        }
+     }
+     
+  .elem {
+    display: block; /* Display each elem class in a column */
+   /* Add some margin between each elem */
+    margin-top: 50px; 
+    margin-bottom: 50px;
+    width:300px ;
+    height: 500px ;
+    
+  }
+  .page4_header{
+    margin-top: 230px !important;
+    font-size: 500px;
+    font-weight: bold;
+    margin-bottom: 100px;
+  }
+  .elem h2{
+    font-size: 30px;
+    font-weight: bold;
+  }
+}
     </style>
   </head>
 
@@ -852,11 +894,17 @@ main {
         <p class="increase">SMILE CLUB</p>
         <h2>ANCIENT SCIENCE AND TECHNOLOGY FOR MODERN INDIA LIFE ENLIGHTENMENT
           </h2>
-        <p>Lets have a smile of satisfaction</p>
-        <div id="arrow">
+        <p>Let's have a smile of satisfaction</p>
+        <!-- <div id="arrow">
           <i class="ri-arrow-down-line"></i>
-        </div>
+        </div> -->
+          <div class="link">
+              <a href="https://www.linkedin.com/company/smile-club-nitk/"><i class="fab fa-linkedin"></i></a>
+              <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn"><i class="fab fa-youtube"></i></a>
+              <a href="https://www.instagram.com/smile._.club_nitk/"><i class="fab fa-instagram"></i></a>
+          </div>
       </div>
+      <div class="bg"> 
       <div id="page2">
         <div id="scroller">
           <div id="scroller-in">
@@ -870,9 +918,9 @@ main {
           <!-- <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-1-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
                     alt="" /> -->
           <div id="about-us-in">
-            <h3>Our Principle</h3>
+            <h3 class="prin">Our Principle</h3>
             <p>
-             Svasmai svalpam samajaya sarvasvam |
+              स्वस्मै स्वल्पं समाजाय सर्वस्वं।
             </p>
           </div>
         </div>
@@ -989,41 +1037,108 @@ main {
           alt=""
         />
       </div> 
-      <div id="page4">
-        <h1 class="page4_header">OUR ACHIEVEMENTS</h1>
+     
+        <div class="card_new_header">
+          <p>Our Achievements</p>
+         </div>
+         <div class="container">
         {% for achievement in achievements %}
+        <div class="card_new">
+          <div class="card__header">
+            
+              <img src="{{ achievement.image.url }}" alt="" />
+            
+          </div>
+          <div class="card__body">
+          <h4>{{ achievement.name }}</h4>
+          </div>
+          {% endfor %}
+        </div>
 
-        <div class="elem">
-          <h2>{{ achievement.name }}</h2>
-          <img src="{{ achievement.image.url }}" alt="" />
+      </div>
+       
+      <div class="card_new_header">
+        <p>Our Recent Events</p>
+       </div>
+       <div class="container">
+        {% for event in latest_events %}
+        <div class="card__header">
+          
+          <img src="{{ event.image.url }}" alt="">
+          
+        </div>
+        <div class="card__body">
+        <h4>{{ event.name }}</h4>
+        <p> {{ event.tagline }} </p>
         </div>
         {% endfor %}
-       
       </div>
-      <div id="page4">
-        <h1 class="page4_header">Our Recent events</h1>
-        {% for event in latest_events %}
 
-        <main>
-          <div class = "card2">
-            <img src="{{ event.image.url }}" alt="">
-            <div class="card-content2">
-              <h2>
-                {{ event.name }}              </h2>
-              <p>
-                {{ event.tagline }}              </p>
-              
-            </div>
-          </div>
-        </main>
-        {% endfor %}
-
-      </div>
     </div>
 
     
+ 
+    <div class="footer">
+      <!-- footer conclusion and links -->
+      <div class="footer-text">
+          <!-- first box -->
+          <div class="conclude">
+              <div class ="logo">
+                <img src="https://res.cloudinary.com/dmnep85ym/image/upload/v1713867500/for_black_bgm_ioxgoi.png" alt="Smile Club Logo">    
+              </div>
+              <div class="conclude-text">
+                  <p>SMILE Club is a college initiative celebrating Indian culture through engaging events. Join us to explore and embrace our rich heritage with a vibrant community.</p>
+              </div>
+              
+          </div>
+
+          <!-- second box -->
+          <div class="company">
+              <li class="list-header">COMPANY</li>
+              <li class="list-points">About us</li>
+              <li class="list-points">Privacy policy</li>
+              <li class="list-points">Terms & conditions</li>
+              <li class="list-points">Contact us</li>
+          </div>
+
+          <!-- third box -->
+          <div class="quick-links">
+             
+              <li class="list-header">QUICK LINKS</li>
+              <li class="list-points">Hire talent</li>
+              <li class="list-points">Find work</li>
+              <li class="list-points">Projects</li>
+              <li class="list-points">Community</li>
+              <li class="list-points">Events</li>
+              <li class="list-points">Blog</li>
+              
+          </div>
+          
+        <!-- fourth box -->
+        <div class="download-app">
+               
+          <li class="list-header">FOLLOW US ON</li>
+          <div class="social-media">
+                  
+            <div class="bg-circle">
+                <a href="https://www.instagram.com/smile._.club_nitk/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <div class="bg-circle">
+                <a href="https://www.linkedin.com/company/smile-club-nitk/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+            <div class="bg-circle">
+                <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      
+      <!-- footer company name -->
+      <h2 class="smile">smile club</h2>
+  </div>
     
-    <footer>
+    <!-- <footer>
       <div class="waves">
         <div class="wave" id="wave1"></div>
         <div class="wave" id="wave2"></div>
@@ -1045,7 +1160,7 @@ main {
         
       </ul>
       <p>@2024 Smile Club | All rights reserved</p>
-    </footer>
+    </footer> -->
 
     {% comment %} <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"

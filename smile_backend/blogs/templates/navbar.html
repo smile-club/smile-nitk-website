@@ -1,58 +1,66 @@
 <style>
     header {
         width: 100%;
-        height: 100px;
+        height: 50px;
+        top: .8em;
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         position: fixed;
         z-index: 99;
-        box-shadow: 0 0 10px #000;
-        background: rgba(0, 0, 0, 0.5);
+        
+        
     }
     
     #chk1 {
         display: none;
     }
     
-    i {
-        color: #fff;
-        cursor: pointer;
-    }
     
-    header .logo {
-        color: #fff;
-        margin-left: 25px;
-        text-transform: uppercase;
-        font-size: 15px;
-    }
     
+    .option{
+        width:95%;
+        
+    }
     header ul {
-        display: flex;
-        justify-content: space-between;
+        flex:2;
+        display: flex;     
+        gap:.7em;
+        justify-content: space-around;
+       
     }
     
     header ul li {
         list-style: none;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    header ul li a{
+        text-decoration: none;
+        color:#fff;
+        font-weight: 500;
+        text-transform: uppercase;
+        padding:10px 15px;
     }
     
-    header ul li a {
-        text-decoration: none;
-        color: #fff;
-        font-weight: 600;
-        text-transform: uppercase;
-        padding: 10px 15px;
-    }
     
     header ul li a:hover {
-        border-bottom: 2px solid cadetblue;
+        color:white;
+        text-shadow: 0 0 5px hsla(0, 10%, 94%, 0.097),  
+                 0 0 10px #f0efedce,
+                 0 0 15px #b8b0b800, 
+                 0 0 20px #878583d7, 
+                 0 0 25px #aaa7aa7c, 
+                 0 0 30px #cfccc5df, 
+                 0 0 35px #d6d3d6aa; 
     }
     
     header .menu {
-        font-size: 2.5rem;
+        font-size: 1.5em;
         display: none;
     }
+
     
+ 
     @media(max-width: 1000px) {
         header ul {
             position: fixed;
@@ -90,22 +98,50 @@
     }
     
     .lo_go img {
-        height: 100px;
-        width: 100px;
-        margin-top: 20px;
-        margin-left: 0px;
-        margin-bottom: 20px;
+        height: 60px;
+        width: 60px;
+        margin-left: 3px;
+        
     }
     
-    .heading {
-        width: 90%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        text-align: center;
-        margin: 100px auto;
+    .lo_go img:hover{
+        animation: flip 3s linear infinite;
     }
+
+    @keyframes flip {
+    0% {
+        transform: scaleX(1); /* Normal orientation */
+    }
+    50% {
+        transform: scaleX(-1); /* Flipped horizontally */
+    }
+    100% {
+        transform: scaleX(1); /* Back to normal */
+    }
+    }
+
+    .nav-bg{
+        background-color: rgba(163, 168, 171, 0.714);
+        display: flex;
+        border-radius: 3em;
+        height: 2.5em;
+        backdrop-filter: blur(4.5px);
+       
+    }
+    .menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+    transition: 0.4s;
+}
+
 </style>
 <header>
     <input type="checkbox" name="" id="chk1">
@@ -113,22 +149,32 @@
         <img src="https://res.cloudinary.com/dmnep85ym/image/upload/v1713867500/for_black_bgm_ioxgoi.png" alt="Smile Club Logo">
         <!-- Insert your logo image here -->
     </div>
-    <ul>
+    <div class="option">
+    <ul >
+        <div class="nav-bg">
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'team-list' %}">About us</a></li>
         <li><a href="{% url 'blogs-list' %}">Blog</a></li>
         <li><a href="{% url 'event-list' %}">Timeline</a></li>
         <li><a href="{% url 'gallery' %}">Gallery</a></li>
         <li><a href="{% url 'display_youtube_videos' %}">Videos</a></li>
-        <li>
+        </div>
+        <!-- <li>
             <a href="https://www.linkedin.com/company/smile-club-nitk/"><i class="fab fa-linkedin"></i></a>
             <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn"><i class="fab fa-youtube"></i></a>
             <a href="https://www.instagram.com/smile._.club_nitk/"><i class="fab fa-instagram"></i></a>
-        </li>
+        </li> -->
     </ul>
+    </div>
     <div class="menu">
-        <label for="chk1">
             <i class="fa fa-bars"></i>
-        </label>
+            <span><a href="{% url 'home' %}">Home</a></span>
+            <span><a href="{% url 'team-list' %}">About us</a></span>
+            <span><a href="{% url 'blogs-list' %}">Blog</a></span>
+            <span><a href="{% url 'event-list' %}">Timeline</a></span>
+            <span><a href="{% url 'gallery' %}">Gallery</a></span>
+            <span><a href="{% url 'gallery' %}">Gallery</a></span>
+            <a href="{% url 'display_youtube_videos' %}">Videos</a>
+        
     </div>
 </header>

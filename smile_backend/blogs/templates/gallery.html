@@ -34,7 +34,7 @@
             height: 100%;
         }
         
-        header {
+        /* header {
         width: 100%;
         height: 100px;
         display: flex;
@@ -53,9 +53,9 @@
     i {
         color: #fff;
         cursor: pointer;
-    }
+    } */
     
-    header .logo {
+    /* header .logo {
         color: #fff;
         margin-left: 25px;
         text-transform: uppercase;
@@ -77,7 +77,7 @@
         color: #fff;
         font-weight: 600;
         text-transform: uppercase;
-        {% comment %} padding: 10px 15px; {% endcomment %}
+        padding: 10px 15px; 
     }
     
     header ul li a:hover {
@@ -88,7 +88,7 @@
         font-size: 2.5rem;
         display: none;
     }
-    
+     */
     @media(max-width: 1000px) {
         header ul {
             position: fixed;
@@ -150,36 +150,7 @@
     
     </style>
 </head>
-
-<div class = "nav">
-    <header>
- <input type="checkbox" name="" id="chk1">
- <div class ="lo_go">
-     <img src="https://res.cloudinary.com/dmnep85ym/image/upload/v1713867500/for_black_bgm_ioxgoi.png" alt="Smile Club Logo">
-     <!-- Insert your logo image here -->
- </div>
- <ul>
-     <li><a href="{% url 'home' %}">Home</a></li>
-     <li><a href="{% url 'team-list' %}">About us</a></li>
-     <li><a href="{% url 'blogs-list' %}">Blog</a></li>
-     <li><a href="{% url 'event-list' %}">Timeline</a></li>
-     <li><a href="{% url 'gallery' %}">Gallery</a></li>
-     <li><a href="{% url 'display_youtube_videos' %}">Videos</a></li>
-     <div class="icons">
-     <li>
-        <a href="https://www.linkedin.com/company/smile-club-nitk/"><i class="fab fa-linkedin"></i></a>
-        <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.instagram.com/p/C52tiEtLNU5/?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram"></i></a>
-     </li>
-     </div>
- </ul>
- <div class="menu">
-     <label for="chk1">
-         <i class="fa fa-bars"></i>
-     </label>
- </div>
-</header>
- </div>
+{%include 'navbar.html' %}
 <body>
     <div class="container">
         <h1 class="text-center heading">Gallery</h1>

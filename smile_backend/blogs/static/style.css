@@ -104,31 +104,8 @@ video {
   text-align: center;
   z-index: 10;
 }
-#page1 h1 {
-  font-size: 7.5vw;
-  font-weight: 900;
-  position: relative;
-}
-#page1 h1::before {
-  content: "EAT. DRINK. PLAY.";
-  position: absolute;
-  color: #000;
-  top: -5px;
-  left: -5px;
-  -webkit-text-stroke: 1.5px #95c11e;
-  z-index: -1;
-}
-#page1 h2 {
-  font-size: 30px;
-  font-weight: 800;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-#page1 p {
-  font-size: 1.2vw;
-  font-weight: 500;
-  width: 40%;
-}
+
+
 #page1 #arrow {
   height: 80px;
   width: 80px;
