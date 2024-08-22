@@ -27,8 +27,8 @@
     /> {% endcomment %}
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
-
-    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    
+    <link rel="stylesheet" href="../static/style.css" />
   </head>
     <style>
         *{
@@ -141,52 +141,37 @@ a {
 }
 
 .cards-wrapper {
-  display: grid;
+  display:flex;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem;
-  padding: 4rem;
-  margin: auto;
+  margin:2em 0em;
+  gap:0.8em;
   flex-wrap: wrap;
 }
+
 .card {
   font-family: 'Heebo', sans-serif;
   --bg-filter-opacity: 0.5;
   /* background-image: url('https://source.unsplash.com/600x400/?computer'); */
-  height: 20em;
-  background-color: rgb(249, 124, 15);
+
   object-fit: cover;
   width: 15em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: white;
   border-radius: 1em;
   padding: 1em;
   display: flex;
-  align-items: flex-end;
-  background-size: cover;
-  background-position: center;
+
+  /* background-size: cover;
+  background-position: center; */
   box-shadow: 0 0 5em -1em black;
   transition: all var(--transition-time);
-  position: relative;
-  overflow: hidden;
-  border: 10px solid #ccc;
-  text-decoration: none;
+  position: relative; 
+  border: 1px solid #ccc;
+  
   margin:auto !important;
-  height: 25rem !important;
-}
-
-.card h1 {
-  margin: 0;
-  font-size: 1.5em;
-  line-height: 1.2em;
-}
-
-.card p {
-  font-size: 0.75em;
-  font-family: 'Open Sans', sans-serif;
-  margin-top: 0.5em;
-  line-height: 2em;
+  height: 20rem;
+  
 }
 
 .card .tags {
@@ -230,6 +215,8 @@ a {
   margin-left: 1rem;
 }
 
+
+
 .info {
   font-size: 1.2em;
   display: flex;
@@ -271,10 +258,7 @@ body {
 }
 
 /* DEFAULT STYLE */
-:root {
-  font-size: 16px;
-  --card-img-height: 200px;
-}
+
 .card-container {
   width: 100%;
   height: 100vh;
@@ -425,13 +409,15 @@ body {
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
+
+  display:flex;
   justify-content: center;
-  width: 1200px;
-  margin-block: 2rem;
-  gap: 2rem;
+  text-align: center;
+  gap: 1em;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
 }
+
 
 img {
   max-width: 100%;
@@ -444,20 +430,43 @@ img {
   flex-direction: column;
   width: 300px;
   overflow: hidden;
- 
   border-radius: 1em;
   background: black;
-
-  margin-right: 35px;
-  margin-left: 35px;
+  height: 30em;
+  
 }
 
 .card__body {
   padding: 1rem;
+  padding-bottom: 5em;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background: black;
   gap: .5rem;
+  box-shadow: 0px -10px 25px 10px black;
+
+}
+
+
+.content_body{
+  overflow-y: auto;
+  flex: 1;
+  height: 65%;
+  
+}
+.content_body::-webkit-scrollbar {
+          width: 0; 
+        }
+.content_header{
+  height: 35%;
+  overflow: hidden;
+  flex: 1;
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .tag {
@@ -465,16 +474,15 @@ img {
   padding: .25em .75em;
   border-radius: 1em;
   font-size: .75rem;
+  
 }
 
-.tag + .tag {
-  margin-left: .5em;
-}
 
 .tag-blue {
-  background: #56CCF2;
-  background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+  background: #b3d4dfb6;
+  background: linear-gradient(to top, #232022a1, #d1e3e9b4);
   color: #fafafa;
+  
 }
 
 .tag-brown {
@@ -490,9 +498,12 @@ img {
 }
 
 .card__body h4 {
-  font-size: 1.5rem;
-  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  line-height: 1.5em;
 }
+
 
 .card__footer {
   display: flex;
@@ -523,7 +534,8 @@ img {
    
 }
 
-.prin,.card_new_header{
+
+.prin, .card_new_header{
   margin-top:2em;
   text-shadow: 0 0 5px hsla(0, 10%, 94%, 0.097),  
                  0 0 10px #f0eded13,
@@ -635,7 +647,7 @@ main {
 }
 
 .bg{
-  background: linear-gradient(to bottom, transparent, rgba(219, 189, 133, 0.296),rgba(225, 195, 139, 0.139), black);
+  background: linear-gradient(to bottom, transparent, rgba(219, 189, 133, 0.16),rgba(37, 37, 37, 0.564), black);
 }
 
 .footer{
@@ -670,6 +682,19 @@ main {
     font-size: 1.2em;
 }
 
+.card h1 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.about p {
+  
+  font-size: 0.5em;
+  margin-top: 0.5em;
+  line-height: 2em;
+}
+
 .quick-links,.download-app,.company{
     list-style-type:none;
     line-height:2.5em;
@@ -682,6 +707,14 @@ main {
 .list-points:hover{
     text-decoration: underline;
     cursor:pointer;
+}
+.list-points{
+  color:rgb(138, 134, 134);
+}
+
+.list-points a{
+  text-decoration: none;
+  color:rgb(138, 134, 134);
 }
 
 .hiring{
@@ -745,7 +778,7 @@ main {
 }
 .logo{
  
-  margin-left: 3.5em;
+  margin-left: 4em;
 }
 
 #page1{
@@ -753,10 +786,136 @@ main {
  
 }
 
+#page3 {
+  height: 100vh;
+  width: 100%;
+  background-color: #ea8760d1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  margin-top:4em;
+  
+}
+#page3 > p {
+  font-size: 25px;
+  font-weight: 700;
+  width: 60%;
+  line-height: 45px;
+  text-align: center;
+}
+
+#page3 img {
+  position: absolute;
+  height: 60px;
+}
+#page3 #colon1 {
+  left: 12%;
+  top: 20%;
+}
+#page3 #colon2 {
+  bottom: 25%;
+  right: 15%;
+}
+
+.achieve{
+  height:20em;
+
+}
+
+.eve{
+  box-shadow: none;
+}
+
+
 .material-symbols-outlined {
   vertical-align: middle;
 }
-@media screen and (max-width: 768px) {
+
+.co_body{
+  height:25%;
+}
+
+.size{
+  width:25em;
+  height:20em;
+  border-radius: none;
+}
+
+.more{
+
+  margin-top:1em;
+  display: flex ;
+  justify-content: center;
+}
+
+.more a{
+  text-decoration: none;
+  color:white;
+}
+
+.card__body p{
+  font-size: 30em;
+}
+
+.full{
+  margin-bottom: .5em;
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1285px) {
+  .card{
+    width:10em;
+  }
+}
+
+@media (max-width: 950px){
+  .smile{
+    letter-spacing: .1em;
+  }
+  
+#page3 {
+  height: 80vh;
+  
+}
+#page3 > p {
+  font-size: 23px;
+  line-height: 35px;
+}
+
+
+}
+
+@media (max-width: 900px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .info {
+    justify-content: center;
+  }
+  .smile{
+    letter-spacing: 0em;
+  }
+  
+.card {
+  
+  width: 10em;
+  font-size: 1.1em;
+  height: 20em;
+  
+}
+
+.size{
+  width:20em;
+  height:15em;
+  
+  
+}
+
+}
+
+@media (max-width: 768px) {
   #page4 {
     width: 100%; /* Adjust width as needed */
     margin: auto; /* Center the container horizontally */
@@ -770,95 +929,41 @@ main {
     align-items: center;
     justify-content: center;
   }
-  #main p{
-  font-size: .7em;
+
+  .full{
+    margin: 0 1em;
+    margin-bottom: .5em;
   }
-}
-/* MEDIA QUERIES */
-@media screen and (max-width: 1285px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr 1fr;
+
+  .prin, .card_new_header{
+    font-size: 35px !important;
+    margin-top: 1.5em;
   }
+
+#page3 > p {
+  font-size: 17px;
+  line-height: 26px;
 }
 
-@media screen and (max-width: 900px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .info {
-    justify-content: center;
-  }
-  .card-grid-space .num {
-    margin-left: 0;
-    text-align: center;
-  }
-  #main h2{
-    font-size: 1.5em;
-  }
+#page3 img {
+  height: 38px;
+}
+#page3 #colon1 {
+  left: 10%;
+  top: 24%;
+}
 }
 
-@media screen and (max-width: 500px) {
-  .cards-wrapper {
-    padding: 4rem 2rem;
-  }
-  .card {
-    max-width: calc(100vw - 4rem);
-  }
-}
 
-@media screen and (max-width: 450px) {
-  .info {
-    display: block;
-    text-align: center;
-  }
-  .info h1 {
-    margin: 0;
-  }
-  #main p{
-  font-size: .5em;
-  }
-}
-@media screen and (max-width: 700px) {
+
+@media (max-width: 700px) {
   #page4 {
     display: flex; /* Display the page4 container as a flex container */
     flex-direction: column; /* Stack elements vertically */
     margin: 20px; /* Add some margin between each elem */
     height: 300vh;
   }
-  @media(max-width:1000px){
-        .search-box button{
-            position: absolute;
-        }
-        header ul{
-            position: fixed;
-            top:100px;
-            right:-100%;
-            background: rgba(0,0,0,0.5);
-            height: calc(100vh - 100px);
-            width:50%;
-            flex-direction: column;
-            align-items: center;
-            transition: right 0.5s linear;
-        }
-        header .menu{
-            display: block;
-            width:100px;
-            text-align: center;
-        }
-        #chk1:checked ~ ul{
-            right:0;
-        }
-     }
-     @media(max-width:600px){
-        header .logo{
-            font-size: 10px;
-            margin-left: 8px;
-        }
-        header ul{
-            width:100%;
-        }
-     }
-     
+  
   .elem {
     display: block; /* Display each elem class in a column */
    /* Add some margin between each elem */
@@ -878,202 +983,389 @@ main {
     font-size: 30px;
     font-weight: bold;
   }
+  #scroller h4 {
+  
+  font-size: 70px;
+
+  }
+
+  .prin, .card_new_header{
+    font-size: 30px !important;
+    margin-top: 1.5em;
+  }
+  
+  #about-us p{
+      font-size:.8em;
+      
+     }
+
+     .cards-wrapper, .container {
+ 
+  gap:.8em;
+
 }
+
+.list-header{
+  font-size: 1em;
+}
+.smile{
+    font-size: 7em;
+  }
+  .footer{
+    height:23.5em;
+  }
+  .logo img{
+  height: 60px;
+  width: 60px;
+  
+}
+
+#page3 {
+  height: 65vh;
+  
+}
+
+}
+
+@media (max-width: 500px) {
+  .cards-wrapper {
+    padding: 4rem 2rem;
+  }
+  .card {
+    max-width: calc(100vw - 4rem);
+  }
+
+  .full{
+    margin: 0 .5em;
+    margin-bottom: .5em;
+  }
+
+  .link i{
+    font-size: .8em;
+  }
+
+  .cards-wrapper {
+  margin:0em 0em;
+  gap:.6em;
+
+} 
+
+.list-header{
+  font-size: .8em;
+}
+
+.list-points{
+  font-size: .8em;
+}
+
+.conclude-text{
+  font-size: 1.4em;
+  line-height: 1.2em;
+}
+
+.download-app{
+  display: none;
+}
+
+.conclude{ 
+    width:45%;
+
+
+}
+.smile{
+    font-size: 4.5em;
+  }
+  .footer{
+    height:21em;
+  }
+  
+
+  
+}
+
+@media (max-width: 450px) {
+  .info {
+    display: block;
+    text-align: center;
+  }
+  .info h1 {
+    margin: 0;
+  }
+  
+  .increase{
+    font-size: 30px  !important;
+  }
+
+  #main p{
+  font-size: .7em;
+  }
+
+  #page1 h2{
+    font-size: 1.1em;
+  }
+
+  #scroller h4 {
+  
+  font-size: 40px;
+  font-weight: 900;
+  transition: all linear 0.3s;
+  -webkit-text-stroke: 2px #ffffff;
+
+  }
+
+  #about-us p{
+      font-size:.6em;
+      
+     }
+  
+     .size{
+  width:18em;
+  height:13em;
+  
+} 
+
+.tag{
+  display: none;
+}
+
+#page3 > p {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#page3 img {
+  height: 33px;
+}
+
+#page3 #colon1 {
+  left: 10%;
+  top: 20%;
+}
+.company{
+  display: none;
+}
+ 
+}
+
+
+
+
+    body::-webkit-scrollbar {
+          width: 0; 
+        }
+
     </style>
   </head>
 
   {%include 'navbar.html' %}
+
   <body>
-    {% comment %} <div id="cursor"></div>
-    <div id="cursor-blur"></div> {% endcomment %}
 
     <video autoplay loop muted src="https://res.cloudinary.com/dmnep85ym/video/upload/v1713779156/help_f6ejrf.mp4"></video>
     <div id="main">
+
+      <!-- hero section -->
       <div id="page1">
+
         <h2>Welcome to </h2>
         <p class="increase">SMILE CLUB</p>
-        <h2>ANCIENT SCIENCE AND TECHNOLOGY FOR MODERN INDIA LIFE ENLIGHTENMENT
-          </h2>
+        <h2 class="full">ANCIENT SCIENCE AND TECHNOLOGY FOR MODERN INDIA LIFE ENLIGHTENMENT</h2>
         <p>Let's have a smile of satisfaction</p>
-        <!-- <div id="arrow">
-          <i class="ri-arrow-down-line"></i>
-        </div> -->
-          <div class="link">
-              <a href="https://www.linkedin.com/company/smile-club-nitk/"><i class="fab fa-linkedin"></i></a>
-              <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn"><i class="fab fa-youtube"></i></a>
-              <a href="https://www.instagram.com/smile._.club_nitk/"><i class="fab fa-instagram"></i></a>
-          </div>
+        
+        <div class="link">
+          <a href="https://www.linkedin.com/company/smile-club-nitk/"><i class="fab fa-linkedin"></i></a>
+          <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/smile._.club_nitk/"><i class="fab fa-instagram"></i></a>
+        </div>
+
       </div>
+
       <div class="bg"> 
-      <div id="page2">
-        <div id="scroller">
-          <div id="scroller-in">
-            <h4>WELCOME TO SMILE CLUB FAMILY !</h4>
+        <div id="page2">
+
+          <!-- moving text -->
+          <div id="scroller">
+            <div id="scroller-in">
+              <h4>WELCOME TO SMILE CLUB FAMILY !</h4>
+            </div>
+            <div id="scroller-in">
+              <h4>WELCOME TO SMILE CLUB FAMILY !</h4>
+            </div>
           </div>
-          <div id="scroller-in">
-            <h4>WELCOME TO SMILE CLUB FAMILY !</h4>
+        
+          <!-- our principles -->
+          <div id="about-us">
+            <div id="about-us-in">
+              <h3 class="prin">Our Principle</h3>
+              <p>
+                स्वस्मै स्वल्पं समाजाय सर्वस्वं।
+              </p>
+            </div>
           </div>
-        </div>
-        <div id="about-us">
-          <!-- <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-1-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
-                    alt="" /> -->
-          <div id="about-us-in">
-            <h3 class="prin">Our Principle</h3>
-            <p>
-              स्वस्मै स्वल्पं समाजाय सर्वस्वं।
-            </p>
-          </div>
-        </div>
        
-        <section class="cards-wrapper">
-          <div class="card-grid-space">
+          <section class="cards-wrapper">
+            <div class="card-grid-space">
             
-            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
-              <div>
-                <h1> Vision</h1>
-                <p>Our principles are our guiding light in crafting our vision statement,it is to celebrate and distribute the joy of the Indian culture.</p>
+              <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
+                <div class="about">
+                  <h1> Vision</h1>
+                  <p>Our principles are our guiding light in crafting our vision statement,it is to celebrate and distribute the joy of the Indian culture.</p>
                 
-              </div>
-            </a>
-          </div>
-          <div class="card-grid-space">
-           
-            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');  ">
-              <div>
-                <h1>About us</h1>
-                <p>A culturally aware club sharing joy and greatness through our culture. Serving society brings us immense satisfaction.
-                </p>
-               
-              </div>
-            </a>
-          </div>
-          <div class="card-grid-space">
-            
-            <a class="card" href="#" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');  ">
-              <div>
-                <h1>Content</h1>
-                <p>Our content explores diverse topics, offering insightful perspectives and fostering intellectual curiosity.</p>
-                
-              </div>
-            </a>
-          </div>
-          <div class="card-grid-space">
-            
-            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
-              <div>
-                <h1>Events</h1>
-                <p>Our events spark curiosity and connection, offering enriching experiences for all. Join us for engaging gatherings that inspire and educate.</p>
-                
-              </div>
-            </a>
-          </div>
-          <div class="card-grid-space">
-            
-            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
-              <div>
-                <h1>Courses</h1>
-                <p>Our courses provide comprehensive learning experiences, tailored to meet diverse interests and skill levels.</p>
-               
-              </div>
-            </a>
-          </div>
-          <div class="card-grid-space">
-            
-            <a class="card" style="--bg-img: url(''); ">
-              <div>
-                <h1>Gallery</h1>
-                <p>Explore our vibrant gallery showcasing the essence of our community, captured in moments of creativity, diversity, and shared experiences.</p>
-                
-              </div>
-            </a>
-          </div>
-          </section>
-       
-        <!-- //////////////// -->
-       <div class="card_new_header">
-        <p>Our Latest Blogs</p>
-       </div>
-        <div class="container">
-          {% for blog in latest_blogs %}
-          <div class="card_new">
-            <div class="card__header">
-              <a href="{% url 'post-detail' blog.id %}" style="text-decoration: none; color: inherit;">
-              <img src="{{ blog.cover_image.url }}" alt="card__image" class="card__image" width="600">
+                </div>
               </a>
             </div>
-            <div class="card__body">
-              <div class="tag">
-                {% for tag in blog.tags.all %}
-              <span class="tag tag-blue">{{ tag }}</span> <!-- Changed blog.tags to tag -->
-              {% if not forloop.last %},{% endif %}
-              {% endfor %}
-            </div>
-            <a href="{% url 'post-detail' blog.id %}" style="text-decoration: none; color: inherit;">
 
-            <h4>{{ blog.title }}</h4>
-            <p>{{ blog.abstract }}</p>
-            </a>
+            <div class="card-grid-space">
+           
+              <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');  ">
+                <div class="about">
+                  <h1>About us</h1>
+                  <p>A culturally aware club sharing joy and greatness through our culture. Serving society brings us immense satisfaction.
+                  </p>
+               
+                </div>
+              </a>
             </div>
+            
+            <div class="card-grid-space">
+            
+              <a class="card" href="#" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');  ">
+                <div class="about">
+                  <h1>Content</h1>
+                  <p>Our content explores diverse topics, offering insightful perspectives and fostering intellectual curiosity.</p>
+                
+                </div>
+              </a>
+            </div>
+            
+            <div class="card-grid-space">
+            
+              <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
+                <div class="about">
+                  <h1>Events</h1>
+                  <p>Our events spark curiosity and connection, offering enriching experiences for all. Join us for engaging gatherings that inspire and educate.</p>
+                
+                </div>
+              </a>
+            </div>
+            
+            <div class="card-grid-space">
+            
+              <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
+                <div class="about">
+                  <h1>Courses</h1>
+                  <p>Our courses provide comprehensive learning experiences, tailored to meet diverse interests and skill levels.</p>
+               
+                </div>
+              </a>
+            </div>
+          
+            <div class="card-grid-space">
+            
+              <a class="card" style="--bg-img: url(''); ">
+                <div class="about">
+                  <h1>Gallery</h1>
+                  <p>Explore our vibrant gallery showcasing the essence of our community, captured in moments of creativity, diversity, and shared experiences.</p>
+                
+                </div>
+              </a>
+            </div>
+          </section>
+       
+        <!-- blogs -->
+          <div class="outer">
+            <div class="card_new_header">
+              <p>Our Latest Blogs</p>
+            </div>
+            <div class="container ">
+              {% for blog in latest_blogs %}
+              <div class="card_new ">
+                <div class="card__header content_header">
+                  <a href="{% url 'post-detail' blog.id %}" style="text-decoration: none; color: inherit;">
+                    <img src="{{ blog.cover_image.url }}" alt="card__image" class="card__image" width="600">
+                  </a>
+                </div>
+                <div class="card__body content_body blog">
+                  <div class="tag">
+                    {% for tag in blog.tags.all %}
+                    <span class="tag tag-blue">{{ tag }}</span> <!-- Changed blog.tags to tag -->
+              <!-- {% if not forloop.last %},{% endif %} -->
+                    {% endfor %}
+                  </div>
+                  <a href="{% url 'post-detail' blog.id %}" style="text-decoration: none; color: inherit;">
+
+                    <h4>{{ blog.title }}</h4>
+                    <p>{{ blog.abstract }}</p>
+                  </a>
+                </div>
+              </div>
+                {% comment %} </a> {% endcomment %}
+                {% endfor %}
+          
+            </div>
+            <p class="more"><a href="{% url 'blogs-list' %}">See all blogs  <i class="fa-solid fa-arrow-right" style="color: white;"></i></a></p>
           </div>
-        {% comment %} </a> {% endcomment %}
-          {% endfor %}
-
-        </div>
         
   
-        
-      <div id="page3">
-        <p>
-          {{ quote.quote }}
-        </p>
-        <img
-          id="colon1"
-          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg"
-          alt=""
-        />
-        <img
-          id="colon2"
-          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg"
-          alt=""
-        />
-      </div> 
-     
+          <!-- quote -->
+          <div id="page3">
+            <p>
+              {{ quote.quote }}
+            </p>
+            <img
+            id="colon1"
+            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg"
+            alt=""
+            />
+            <img
+            id="colon2"
+            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg"
+            alt=""
+            />
+          </div> 
+      
+          <div class="outer">
         <div class="card_new_header">
           <p>Our Achievements</p>
          </div>
          <div class="container">
         {% for achievement in achievements %}
-        <div class="card_new">
-          <div class="card__header">
+        <div class="card_new achieve">
+          <div class="card__header content_header">
             
               <img src="{{ achievement.image.url }}" alt="" />
             
           </div>
-          <div class="card__body">
+          <div class="card__body co_body eve">
           <h4>{{ achievement.name }}</h4>
           </div>
           {% endfor %}
         </div>
 
       </div>
-       
+    </div>
+
+  <div class="outer">
       <div class="card_new_header">
         <p>Our Recent Events</p>
        </div>
-       <div class="container">
+       <div class="container ">
         {% for event in latest_events %}
-        <div class="card__header">
+        <div class="card_new size">
+        <div class="card__header content_header">
           
           <img src="{{ event.image.url }}" alt="">
           
         </div>
-        <div class="card__body">
+        <div class="card__body co_body eve">
         <h4>{{ event.name }}</h4>
         <p> {{ event.tagline }} </p>
         </div>
-        {% endfor %}
       </div>
-
+        {% endfor %}
+      
+    </div>
+    </div>
     </div>
 
     
@@ -1092,27 +1384,27 @@ main {
               
           </div>
 
-          <!-- second box -->
-          <div class="company">
-              <li class="list-header">COMPANY</li>
-              <li class="list-points">About us</li>
-              <li class="list-points">Privacy policy</li>
-              <li class="list-points">Terms & conditions</li>
-              <li class="list-points">Contact us</li>
+           <!-- Second box -->
+          <div class="quick-links">
+            <li class="list-header">QUICK LINKS</li>
+            <li class="list-points"><a href="{% url 'home' %}">Home</a></li>
+            <li class="list-points"><a href="{% url 'blogs-list' %}">Blogs</a></li>
+            <li class="list-points"><a href="{% url 'gallery' %}">Gallery</a></li>
+            
           </div>
 
           <!-- third box -->
-          <div class="quick-links">
+          <div class="company">
              
-              <li class="list-header">QUICK LINKS</li>
-              <li class="list-points">Hire talent</li>
-              <li class="list-points">Find work</li>
-              <li class="list-points">Projects</li>
-              <li class="list-points">Community</li>
-              <li class="list-points">Events</li>
-              <li class="list-points">Blog</li>
-              
-          </div>
+            <li class="list-header">OTHER LINKS</li>
+            <li class="list-points"><a href="{% url 'team-list' %}">About Us</a></li>
+            <li class="list-points"><a href="{% url 'event-list' %}">Events</a></li>
+            
+            
+        </div>
+         
+         
+
           
         <!-- fourth box -->
         <div class="download-app">
