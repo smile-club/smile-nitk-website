@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-#e((2$$5&qy9p951mc3*5cj&@pf8_(0dp=f4wb#@-vtw8otxey
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['smileclub.nitk.ac.in' , 'www.smileclub.nitk.ac.in' , '0.0.0.0']
 
 
 # Application definition
@@ -132,6 +132,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
+# Define the base directory of your project
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
@@ -143,8 +145,6 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# Define the base directory of your project
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Media files (user-uploaded files)
 cloudinary.config( 
