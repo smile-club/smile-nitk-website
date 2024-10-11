@@ -13,23 +13,27 @@ references
 
 #### Make sure u r in SMILE-NITK-WEBSITE folder
 ```
-- python -m venv venv
+python -m venv venv
 ```
 ### Activate the Virtual Environment 
 ```
-- venv\Scripts\activate
+venv\Scripts\activate
 ```
 ### Installing the requirements for the project
 ```
-- pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 ### Making migrations and running the server
 
 #### Make sure u r in smile_backend folder
 ```
-- python manage.py makemigrations
-- python manage.py migrate
-- python manage.py runserver
+python manage.py makemigrations
+```
+```
+python manage.py migrate
+```
+```
+python manage.py runserver
 ```
 ## On macOS/Linux
 
@@ -37,32 +41,38 @@ references
 
 #### Make sure u r in SMILE-NITK-WEBSITE folder
 ```
-- python3 -m venv venv
+python3 -m venv venv
 ```
 
 ### Activate the Virtual Environment 
 
 ```
-- source .venv/bin/activate
+source venv/bin/activate
 ```
 
 ### Installing the requirements for the project
 ```
-- pip install -r requirements.txt
+pip install -r requirements.txt
 ```
 ### Making migrations and running the server
 
 #### Make sure u r in smile_backend folder
 ```
-- python3 manage.py makemigrations
-- python3 manage.py migrate
-- python manage.py createsuperuser
-- python3 manage.py runserver
+python3 manage.py makemigrations
+```
+```
+python3 manage.py migrate
+```
+```
+python manage.py createsuperuser
+```
+```
+python3 manage.py runserver
 ```
 
 ## For making requirements.txt after adding new packages
 ```
-- python3 -m pip freeze > requirements.txt
+python3 -m pip freeze > requirements.txt
 ```
 ## Additional Links
 
