@@ -36,230 +36,14 @@
         --color1: #fff;
         --color2: #181818;
       }
-      /* footer */
-      footer {
-        position: relative;
-        width: 100%;
-        background: black;
-        min-height: 200px;
-        padding: 20px 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-bottom: 0px;
-        margin-top: 100px;
-      }
-      footer .social_icon,
-      footer .menu {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0;
-        flex-wrap: wrap;
-      }
-
-      footer .social_icon li,
-      footer .menu li {
-        list-style: none;
-      }
-      footer .social_icon li a {
-        font-size: 2em;
-        color: #fff;
-        margin: 0 10px;
-        display: inline-block;
-        transition: 0.5s;
-      }
-      footer .social_icon li a:hover {
-        transform: translateY(-10);
-      }
-      footer .menu li a {
-        font-size: 1.2em;
-        color: #fff;
-        margin: 0 10px;
-        display: inline-block;
-        text-decoration: none;
-        opacity: 0.75;
-      }
-      footer .menu li a:hover {
-        opacity: 1;
-      }
-      footer p {
-        color: #fff;
-        text-align: center;
-        margin-top: 15px;
-        margin-bottom: 10px;
-        font-size: 1.1em;
-      }
-      footer .wave {
-        position: absolute;
-        top: -100px;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background: url('https://res.cloudinary.com/dmnep85ym/image/upload/v1713783080/wave_j0z4mz.png'); /* Use the wave image as background */
-        background-size: 1000px 100px;
-      }
-      footer .wave#wave1 {
-        z-index: 1000;
-        opacity: 1;
-        bottom: 0;
-        animation: animateWave 4s linear infinite;
-      }
-      footer .wave#wave2 {
-        z-index: 999;
-        opacity: 0.5;
-        bottom: 10px;
-        animation: animateWave_02 4s linear infinite;
-      }
-      footer .wave#wave3 {
-        z-index: 1000;
-        opacity: 0.2;
-        bottom: 15px;
-        animation: animateWave 3s linear infinite;
-      }
-      footer .wave#wave4 {
-        z-index: 999;
-        opacity: 0.7;
-        bottom: 20px;
-        animation: animateWave_02 3s linear infinite;
-      }
-      @keyframes animateWave {
-        0% {
-          background-position-x: 1000px;
-        }
-        100% {
-          background-position-x: 0px;
-        }
-      }
-      @keyframes animateWave_02 {
-        0% {
-          background-position-x: 0px;
-        }
-        100% {
-          background-position-x: 1000px;
-        }
-      }
+     
 
       .page4_header {
         width: 100%;
         text-align: center;
         margin-top: 250px;
       }
-      /* header */
-      header{
-        width:100%;
-        height:100px;
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        z-index: 99;
-        box-shadow: 0 0 10px #000;
-        background: rgba(0,0,0,0.5);
-
-     }
-     #chk1{
-        display:none;
-     }
-     i{
-        color:#fff;
-        cursor:pointer;
-     }
-     header .logo{
-        flex:1;
-        color:#fff;
-        margin-left:50px;
-        text-transform:uppercase;
-        font-size: 15px;
-     }
-     header .search-box{
-        flex:1;
-        position: relative;
-        
-     }
-     .search-box input{
-        width:100%;
-        height:40px;
-        border:none;
-        outline: none;
-        background: #f2f2f2;
-        border-radius: 30px;
-        color:grey;
-        font-size: 16px;
-        text-align: center;
-        padding-left: 5px;
-        padding-right: 40px;
-       
-     }
-     .search-box button{
-        cursor:pointer;
-        width:40px;
-        height: 40px;
-        border-radius: 30px;
-        border: none;
-        position: absolute;
-        top:0;
-        right:0;
-        transform: scale(0.9);
-        background: rgb(14, 14, 14);
-     }
-     header ul{
-        flex:2;
-        display: flex;
-        justify-content: space-between;
-     }
-     header ul li{
-        list-style: none;
-     }
-     header ul li a{
-        text-decoration: none;
-        color:#fff;
-        font-weight: 600;
-        text-transform: uppercase;
-        padding:10px 15px;
-     }
-     header ul li a:hover{
-        border-bottom: 2px solid cadetblue;
-     }
-     header .menu{
-        font-size:2.5rem;
-        display: none;
-     }
-     @media(max-width:1000px){
-        .search-box button{
-            position: absolute;
-        }
-        header ul{
-            position: fixed;
-            top:100px;
-            right:-100%;
-            background: rgba(0,0,0,0.5);
-            height: calc(100vh - 100px);
-            width:50%;
-            flex-direction: column;
-            align-items: center;
-            transition: right 0.5s linear;
-        }
-        header .menu{
-            display: block;
-            width:100px;
-            text-align: center;
-        }
-        #chk1:checked ~ ul{
-            right:0;
-        }
-     }
-     @media(max-width:600px){
-        header .logo{
-            font-size: 10px;
-            margin-left: 8px;
-        }
-        header ul{
-            width:100%;
-        }
-     }
+    
      .logo img{
         height:40px;
         width:40px;
@@ -285,7 +69,7 @@
     color: white;
     margin-bottom: 25px;
     position: relative;
-    text-decoration: underline;
+    
 }
 
 .heading h1:after {
@@ -405,75 +189,9 @@
     max-height: 50vh; /* Optional: Set maximum height */
 }
 
-/* Media query for smaller screens */
-@media screen and (max-width: 768px) {
-    .heading img {
-        max-height: 50vh; /* Adjust height for smaller screens */
-    }
-}
 
-.header1 h1:hover {
-    text-decoration: underline; /* Add underline on hover */
-    cursor: pointer; /* Change cursor to pointer on hover */
-}
 
-/* style.css */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "montserrat";
-    color: #fff;
-  }
-  
-  html,
-  body {
-    height: 100%;
-  
-    width: 100%;
-    
-    overflow-x: hidden;
-  
-  
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: #fff;
-  
-    border-radius: 50px;
-  }
-  body {
-    overflow-x: hidden;
-  }
-  #cursor {
-    height: 20px;
-    width: 20px;
-    background-color: #95c11e;
-    border-radius: 50%;
-    position: fixed;
-    z-index: 99;
-    transition: all linear 0.1s;
-  }
-  #cursor-blur {
-    height: 500px;
-    width: 500px;
-    background-color: rgba(150, 193, 30, 0.3);
-    border-radius: 50%;
-    position: fixed;
-    filter: blur(80px);
-    z-index: 9;
-    transition: all linear 0.4s;
-  }
-  
 
-  video {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    z-index: -1;
-    position: fixed;
-  }
-  
 
   #page1 {
     height: 100vh;
@@ -491,15 +209,7 @@
     font-weight: 900;
     position: relative;
   }
-  #page1 h1::before {
-    content: "EAT. DRINK. PLAY.";
-    position: absolute;
-    color: #000;
-    top: -5px;
-    left: -5px;
-    -webkit-text-stroke: 1.5px #95c11e;
-    z-index: -1;
-  }
+  
   #page1 h2 {
     font-size: 30px;
     font-weight: 800;
@@ -541,50 +251,7 @@
     z-index: 10;
   }
   
-  #scroller {
-    /* background-color: red; */
-    white-space: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-    position: relative;
-    z-index: 10;
-  }
-  #scroller::-webkit-scrollbar {
-    display: none;
-  }
-  #scroller-in {
-    display: inline-block;
-    white-space: nowrap;
-    animation-name: scroll;
-    animation-duration: 40s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-  }
-  
-  #scroller h4 {
-    display: inline-block;
-    font-size: 120px;
-    font-weight: 900;
-    font-family: gilroy;
-    margin-right: 20px;
-    transition: all linear 0.3s;
-    color: #faf7f7;
-    -webkit-text-stroke: 2px #ffffff;
-    opacity:0.5;
-  }
-  #scroller h4:hover {
-    color: #f2f4f0;
-    -webkit-text-stroke: 2px #1c1c1b;
-  }
-  
-  @keyframes scroll {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(-100%);
-    }
-  }
+
   
   #about-us {
     height: 40vh;
@@ -758,12 +425,7 @@
     transition: all ease 0.5s;
     scale: 1.1;
   }
-  .elem:hover h2 {
-    /* font-size:21px; */
-    font-weight:bold;
-    background-color: transparent;
-    opacity:1.5;
-  }
+  
   .elem:hover img {
     scale: 1.5;
   }
@@ -810,11 +472,7 @@
   margin-bottom: auto;
 }
 
-.nav-right {
-  display: flex;
-  align-items: center; /* To vertically center the form and buttons */
-  margin-left: auto; /* Pushes the container to the right */
-}
+
 .card-img-top {
   width: 100%;
   height: 200px; /* Adjust the height as needed */
@@ -1140,35 +798,8 @@
             
           </div>
 
-          <footer>
-            <div class="waves">
-              <div class="wave" id="wave1"></div>
-              <div class="wave" id="wave2"></div>
-              <div class="wave" id="wave3"></div>
-              <div class="wave" id="wave4"></div>
-            </div>
-            <ul class="social_icon">
-              <li><a href="https://www.linkedin.com/company/smile-club-nitk/"><i class="fab fa-linkedin"></i></a></li>
-              <li> <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn"><i class="fab fa-youtube"></i></a></li>
-                <li> <a href="https://www.instagram.com/p/C52tiEtLNU5/?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram"></i></a></li>
-          </ul>
-          <ul class="menu">
-            <li><a href="{% url 'home' %}">Home</a></li>
-            <li><a href="{% url 'team-list' %}">About us </a></li>
-            <li><a href="{% url 'blogs-list' %}">Blog</a></li>
-            <li><a href="{% url 'event-list' %}">Timeline</a></li>
-            <li><a href="{% url 'gallery' %}">Gallery</a></li>
-            <li><a href="{% url 'display_youtube_videos' %}">Videos</a></li>
-            
-          </ul>
-            <p>@2024 Smile Club | All rights reserved</p>
-          </footer>
-        
-</div>
+          {%include 'footer.html' %}
 
-        
-      
-    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
         integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>

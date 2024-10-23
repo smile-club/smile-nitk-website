@@ -28,19 +28,28 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
     
-    <link rel="stylesheet" href="../static/style.css" />
+    <!-- <link rel="stylesheet" href="../static/style.css" /> -->
   </head>
     <style>
-        *{
-            box-sizing: border-box;
-            margin:0;
-            padding: 0;
-        }
-        body {
-        --color1: #fff;
-        --color2: #181818;
-      }
-     
+        
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+  color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+
+  width: 100%;
+  
+  overflow-x: hidden;
+
+
+}
      
      #chk1{
         display:none;
@@ -59,6 +68,231 @@
      #about-us p{
       margin-top:-1em;
      }
+
+     /* importing style.css */
+
+
+     video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  position: fixed;
+}
+
+#main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.39);
+}
+
+#page1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 10;
+}
+
+#page2 {
+  min-height: 100vh;
+  width: 100%;
+  z-index: 10;
+}
+
+#scroller {
+  /* background-color: red; */
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
+}
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+#scroller-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  
+}
+
+#scroller h4 {
+  display: inline-block;
+  font-size: 120px;
+  font-weight: 900;
+  font-family: gilroy;
+  margin-right: 20px;
+  transition: all linear 0.3s;
+  color: #faf7f7;
+  -webkit-text-stroke: 2px #ffffff;
+  opacity:0.5;
+}
+#scroller h4:hover {
+  color: #f2f4f0;
+  -webkit-text-stroke: 2px #1c1c1b;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#about-us {
+  
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  justify-content: space-around;
+}
+
+#about-us-in {
+  width: 50%;
+  text-align: center;
+}
+#about-us-in h3 {
+  font-size: 54px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+#about-us-in p {
+  font-size: 20px;
+}
+
+.about-header{
+display:flex;
+justify-content: center;
+flex-direction: row;
+align-items:center;
+margin: 100px auto;
+position:relative;
+
+}
+.header1{
+display:flex;
+justify-content: center;
+flex-direction: row;
+align-items:center;
+margin: 100px auto;
+
+}
+.card1{
+width:200px;
+border:2px solid black;
+}
+
+
+.about-us2 h2 {
+margin-bottom: auto;
+}
+
+.card-img-top {
+width: 100%;
+height: 200px; /* Adjust the height as needed */
+object-fit: cover; /* Ensure the image covers the entire space */
+border-radius: 15px;
+}
+.card-another .card-body {
+background-color: black;
+color: white;
+text-align: center;
+border-radius: 15px;
+}
+
+.about-cards-container {
+display: flex; /* Use flexbox to align flex items */
+flex-wrap: wrap; /* Allow flex items to wrap to the next line if necessary */
+justify-content: space-around; /* Distribute flex items evenly with space around them */
+margin: 50px; /* Add margin to the container for spacing */
+width: 100%;
+
+ 
+}
+.card-another {
+
+height: 300px; /* Set the desired height of each card */
+margin-bottom: 20px; /* Add margin at the bottom of each card */
+margin-right: 0px; /* Add margin between cards */
+border-radius: 15px; /* Add rounded corners to the cards */
+transition: 0.3s;
+cursor: pointer;
+}
+
+
+.card-another:hover {
+background-color: #f68b10;
+opacity: 0.5;
+}
+.paragraph-container {
+display: flex;
+justify-content: flex-end;
+
+width: 60%; /* Adjust the width as needed */
+margin-left: auto; /* Push the container to the right */
+
+}
+.paragraph {
+display: flex;
+flex-direction: column;
+flex: 1;
+justify-content: flex-end; /* Align the container to the end (right side) */
+padding: 0 20px; /* Add padding for spacing */
+
+margin-bottom: 3rem; /* Add padding for spacing */
+
+}
+.paragraph-container2 {
+display: flex;
+flex-direction: column;
+flex: 1;
+justify-content: flex-end; /* Align the container to the end (right side) */
+padding: 0 20px; /* Add padding for spacing */
+margin-top:3rem;
+margin-bottom: 3rem; /* Add padding for spacing */
+
+}
+.img-about {
+width: 35%; /* Set the width of the container */
+margin: 0 auto; /* Center the container horizontally */
+float: left;
+position:relative;
+height:auto
+}
+.img-about img {
+width: 100%; /* Ensure the image fills the container width */
+height: 620px; /* Maintain aspect ratio */
+display: block; /* Ensure the image is block-level */
+}
+
+.about-aboutus {
+width: 100%;
+height: 20vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center; /* Center align the text */
+}
+
+.about-aboutus h1 {
+font-weight: bold; /* Make the text bold */
+}
+
+/* the end */
      /* header .search-box{
         flex:1;
         position: relative;
@@ -120,25 +354,11 @@
      /* ////////////// */
      @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
 
-:root {
-  --color: #3c3163;
-  --transition-time: 0.5s;
-}
-
 * {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: 'Open Sans', sans-serif;
-  background: #fafafa;
-}
 
-a {
-  color: inherit;
-}
 
 .cards-wrapper {
   display:flex;
@@ -650,37 +870,6 @@ main {
   background: linear-gradient(to bottom, transparent, rgba(219, 189, 133, 0.16),rgba(37, 37, 37, 0.564), black);
 }
 
-.footer{
-    height: 26em;
-    background: linear-gradient(to top , rgb(2, 2, 24), black);
-    overflow: hidden;
-}
-
-/* conclusion and links */
-.footer-text{
-    height:21em;
-    display:flex;
-    justify-content: space-around;
-    padding-top: 3em;
-    font-size: small;
-}
- 
-.conclude{ 
-    width:29%;
-
-
-}
-
-.conclude-text{
-    font-size: 1.1em;
-    line-height: 1.5em;
-    margin: 1.5em 0;
-}
-
-.list-header{
-    font-weight: bold;
-    font-size: 1.2em;
-}
 
 .card h1 {
   margin: 0;
@@ -695,27 +884,11 @@ main {
   line-height: 2em;
 }
 
-.quick-links,.download-app,.company{
-    list-style-type:none;
-    line-height:2.5em;
-}
 
-.list-points,.hiring{
+.hiring{
     font-size:1.1em;
 }
 
-.list-points:hover{
-    text-decoration: underline;
-    cursor:pointer;
-}
-.list-points{
-  color:rgb(138, 134, 134);
-}
-
-.list-points a{
-  text-decoration: none;
-  color:rgb(138, 134, 134);
-}
 
 .hiring{
     span{
@@ -725,60 +898,6 @@ main {
         text-decoration: underline;
         cursor: pointer;
     }
-}
-
-/* social media links */
-.social-media{
-    
-    height:4em;
-    display: flex;
-    justify-content: center;
-    gap: 1em;
-}
-
-.bg-circle{
-    margin-top:1.5em;
-    background-color: white;
-    height:2em;
-    width:2em;
-    border-radius: 50%;
-   
-    i{
-       
-        margin-left:.45em;
-        font-size: 1em;
-        color: #000;
-    }
-
-}
-
-/* company name */
-.smile{
-    
-    cursor:default;
-    text-align: center;
-    color: #f0eded3a;
-    font-size: 9.5em; 
-    letter-spacing: .2em; 
-    text-shadow: 0 0 5px hsla(0, 10%, 94%, 0.097),  
-                 0 0 10px #f0eded13,
-                 0 0 15px #b8b0b800, 
-                 0 0 20px #87838700, 
-                 0 0 25px #aaa7aa00, 
-                 0 0 30px #cfc5cf00, 
-                 0 0 35px #d6d3d600; 
-    
-}
-
-.logo img{
-  height: 100px;
-  width: 100px;
-  background: radial-gradient(circle, rgba(182, 182, 177, 0.473) 1%, rgba(55, 55, 53, 0.473), black 99%);
-  
-}
-.logo{
- 
-  margin-left: 4em;
 }
 
 #page1{
@@ -1366,93 +1485,14 @@ main {
       
     </div>
     </div>
+    
     </div>
 
-    
- 
-    <div class="footer">
-      <!-- footer conclusion and links -->
-      <div class="footer-text">
-          <!-- first box -->
-          <div class="conclude">
-              <div class ="logo">
-                <img src="https://res.cloudinary.com/dmnep85ym/image/upload/v1713867500/for_black_bgm_ioxgoi.png" alt="Smile Club Logo">    
-              </div>
-              <div class="conclude-text">
-                  <p>SMILE Club is a college initiative celebrating Indian culture through engaging events. Join us to explore and embrace our rich heritage with a vibrant community.</p>
-              </div>
-              
-          </div>
-
-           <!-- Second box -->
-          <div class="quick-links">
-            <li class="list-header">QUICK LINKS</li>
-            <li class="list-points"><a href="{% url 'home' %}">Home</a></li>
-            <li class="list-points"><a href="{% url 'blogs-list' %}">Blogs</a></li>
-            <li class="list-points"><a href="{% url 'gallery' %}">Gallery</a></li>
-            
-          </div>
-
-          <!-- third box -->
-          <div class="company">
-             
-            <li class="list-header">OTHER LINKS</li>
-            <li class="list-points"><a href="{% url 'team-list' %}">About Us</a></li>
-            <li class="list-points"><a href="{% url 'event-list' %}">Events</a></li>
-            
-            
-        </div>
-         
-         
-
-          
-        <!-- fourth box -->
-        <div class="download-app">
-               
-          <li class="list-header">FOLLOW US ON</li>
-          <div class="social-media">
-                  
-            <div class="bg-circle">
-                <a href="https://www.instagram.com/smile._.club_nitk/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-            <div class="bg-circle">
-                <a href="https://www.linkedin.com/company/smile-club-nitk/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
-            </div>
-            <div class="bg-circle">
-                <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-      
-      <!-- footer company name -->
-      <h2 class="smile">smile club</h2>
+  </div>
   </div>
     
-    <!-- <footer>
-      <div class="waves">
-        <div class="wave" id="wave1"></div>
-        <div class="wave" id="wave2"></div>
-        <div class="wave" id="wave3"></div>
-        <div class="wave" id="wave4"></div>
-      </div>
-      <ul class="social_icon">
-          <li><a href="https://www.linkedin.com/company/smile-club-nitk/"><i class="fab fa-linkedin"></i></a></li>
-          <li> <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn"><i class="fab fa-youtube"></i></a></li>
-            <li> <a href="https://www.instagram.com/p/C52tiEtLNU5/?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram"></i></a></li>
-      </ul>
-      <ul class="menu">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'team-list' %}">About us </a></li>
-        <li><a href="{% url 'blogs-list' %}">Blog</a></li>
-        <li><a href="{% url 'event-list' %}">Timeline</a></li>
-        <li><a href="{% url 'gallery' %}">Gallery</a></li>
-        <li><a href="{% url 'display_youtube_videos' %}">Videos</a></li>
-        
-      </ul>
-      <p>@2024 Smile Club | All rights reserved</p>
-    </footer> -->
+
+   {%include 'footer.html' %}
 
     {% comment %} <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
@@ -1475,5 +1515,6 @@ main {
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script> {% endcomment %}
+   
   </body>
 </html>
