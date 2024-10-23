@@ -4,7 +4,6 @@
   {%load static%}
   {% load bootstrap5 %}
   {% bootstrap_css %}
-  {% bootstrap_javascript %}
 
   <head>
     <meta charset="UTF-8" />
@@ -292,73 +291,6 @@ text-align: center; /* Center align the text */
 font-weight: bold; /* Make the text bold */
 }
 
-/* the end */
-     /* header .search-box{
-        flex:1;
-        position: relative;
-        
-     } */
-     /* .search-box input{
-        width:100%;
-        height:40px;
-        border:none;
-        outline: none;
-        background: #f2f2f2;
-        border-radius: 30px;
-        color:grey;
-        font-size: 16px;
-        text-align: center;
-        padding-left: 5px;
-        padding-right: 40px;
-       
-     } */
-     /* .search-box button{
-        cursor:pointer;
-        width:40px;
-        height: 40px;
-        border-radius: 30px;
-        border: none;
-        position: absolute;
-        top:0;
-        right:0;
-        transform: scale(0.9);
-        background: rgb(14, 14, 14);
-     } */
-     /* header ul{
-        flex:2;
-        display: flex;
-        justify-content: space-around;
-     } */
-     /* header ul li{
-        list-style: none;
-     } */
-     /* header ul li a{
-        text-decoration: none;
-        color:#fff;
-        font-weight: 500;
-        text-transform: uppercase;
-        padding:10px 15px;
-     } */
-/*      
-     header .menu{
-        font-size:2.5rem;
-        display: none;
-     } */
-    
-     /* .logo img{
-        height:40px;
-        width:40px;
-        margin-top: 20px;
-        margin-left: 25px;
-     } */
-     /* ////////////// */
-     @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
-
-* {
-  box-sizing: border-box;
-}
-
-
 
 .cards-wrapper {
   display:flex;
@@ -382,8 +314,6 @@ font-weight: bold; /* Make the text bold */
   padding: 1em;
   display: flex;
 
-  /* background-size: cover;
-  background-position: center; */
   box-shadow: 0 0 5em -1em black;
   transition: all var(--transition-time);
   position: relative; 
@@ -393,6 +323,7 @@ font-weight: bold; /* Make the text bold */
   height: 20rem;
   
 }
+
 
 .card .tags {
   display: flex;
@@ -1274,7 +1205,6 @@ main {
         }
 
     </style>
-  </head>
 
   {%include 'navbar.html' %}
 
