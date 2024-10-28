@@ -1,0 +1,250 @@
+<style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+  color: #fff;}
+
+        
+    .smile{
+    
+    cursor:default;
+    text-align: center;
+    color: #f0eded3a;
+    font-size: 9.5em; 
+    letter-spacing: .2em; 
+    text-shadow: 0 0 5px hsla(0, 10%, 94%, 0.097),  
+                 0 0 10px #f0eded13,
+                 0 0 15px #b8b0b800, 
+                 0 0 20px #87838700, 
+                 0 0 25px #aaa7aa00, 
+                 0 0 30px #cfc5cf00, 
+                 0 0 35px #d6d3d600; 
+    
+}
+/* social media links */
+.social-media{
+    
+    height:4em;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.bg-circle{
+    margin-top:1.5em;
+    background-color: white;
+    height:2em;
+    width:2em;
+    border-radius: 50%;
+   
+    i{
+       
+        margin-left:.45em;
+        font-size: 1em;
+        color: #000;
+    }
+
+}
+.list-header{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.list-points{
+    font-size:1.1em;
+}
+.quick-links,.download-app,.company{
+    list-style-type:none;
+    line-height:2.5em;
+}
+.list-points:hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
+.list-points{
+  color:rgb(138, 134, 134);
+}
+
+.list-points a{
+  text-decoration: none;
+  color:rgb(138, 134, 134);
+}
+.logo img{
+  height: 100px;
+  width: 100px;
+  background: radial-gradient(circle, rgba(182, 182, 177, 0.473) 1%, rgba(55, 55, 53, 0.473), black 99%);
+  
+}
+.logo{
+ 
+  margin-left: 4em;
+}
+
+/* conclusion and links */
+.footer-text{
+    height:21em;
+    display:flex;
+    justify-content: space-around;
+    padding-top: 3em;
+    font-size: small;
+}
+ 
+.conclude{ 
+    width:29%;
+
+
+}
+
+.footer{
+    height: 26em;
+    background: linear-gradient(to top , rgb(2, 2, 24), black);
+    overflow: hidden;
+}
+
+.conclude-text{
+    font-size: 1.1em;
+    line-height: 1.5em;
+    margin: 1.5em 0;
+}
+@media (max-width: 950px){
+  .smile{
+    letter-spacing: .1em;
+  }
+}
+@media (max-width: 900px) {
+
+  .smile{
+    letter-spacing: 0em;
+  }
+}
+
+
+@media (max-width: 700px) {
+  
+.list-header{
+  font-size: 1em;
+}
+.smile{
+    font-size: 7em;
+  }
+  .footer{
+    height:23.5em;
+  }
+  .logo img{
+  height: 60px;
+  width: 60px;
+  
+}
+@media (max-width: 500px) {
+  
+
+.list-header{
+  font-size: .8em;
+}
+
+.list-points{
+  font-size: .8em;
+}
+
+.conclude-text{
+  font-size: 1.4em;
+  line-height: 1.2em;
+}
+
+.download-app{
+  display: none;
+}
+
+.conclude{ 
+    width:45%;
+
+
+}
+.smile{
+    font-size: 4.5em;
+  }
+  .footer{
+    height:21em;
+  }
+  
+
+  
+}
+
+@media (max-width: 450px) {
+.company{
+  display: none;
+}
+ 
+}
+.footer{
+    height: 26em;
+    background: linear-gradient(to top , rgb(2, 2, 24), black);
+    overflow: hidden;
+}
+
+
+}
+</style>
+<footer>
+    <div class="footer">
+        <!-- footer conclusion and links -->
+        <div class="footer-text">
+            <!-- first box -->
+            <div class="conclude">
+                <div class ="logo">
+                  <img src="https://res.cloudinary.com/dmnep85ym/image/upload/v1713867500/for_black_bgm_ioxgoi.png" alt="Smile Club Logo">    
+                </div>
+                <div class="conclude-text">
+                    <p>SMILE Club is a college initiative celebrating Indian culture through engaging events. Join us to explore and embrace our rich heritage with a vibrant community.</p>
+                </div>
+                
+            </div>
+  
+             <!-- Second box -->
+            <div class="quick-links">
+              <li class="list-header">QUICK LINKS</li>
+              <li class="list-points"><a href="{% url 'home' %}">Home</a></li>
+              <li class="list-points"><a href="{% url 'blogs-list' %}">Blogs</a></li>
+              <li class="list-points"><a href="{% url 'gallery' %}">Gallery</a></li>
+              
+            </div>
+  
+            <!-- third box -->
+            <div class="company">
+               
+              <li class="list-header">OTHER LINKS</li>
+              <li class="list-points"><a href="{% url 'team-list' %}">About Us</a></li>
+              <li class="list-points"><a href="{% url 'event-list' %}">Events</a></li>
+              
+              
+          </div>
+           
+           
+  
+            
+          <!-- fourth box -->
+          <div class="download-app">
+                 
+            <li class="list-header">FOLLOW US ON</li>
+            <div class="social-media">
+                    
+              <div class="bg-circle">
+                  <a href="https://www.instagram.com/smile._.club_nitk/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+              </div>
+              <div class="bg-circle">
+                  <a href="https://www.linkedin.com/company/smile-club-nitk/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+              </div>
+              <div class="bg-circle">
+                  <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+        
+        <!-- footer company name -->
+        <h2 class="smile">smile club</h2>
+    </div>
+</footer>

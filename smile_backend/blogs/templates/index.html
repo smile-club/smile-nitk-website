@@ -4,7 +4,6 @@
   {%load static%}
   {% load bootstrap5 %}
   {% bootstrap_css %}
-  {% bootstrap_javascript %}
 
   <head>
     <meta charset="UTF-8" />
@@ -25,141 +24,32 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     /> {% endcomment %}
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
-
-    <link rel="stylesheet" href="{% static 'style.css' %}" /></head>
+    
+    <!-- <link rel="stylesheet" href="../static/style.css" /> -->
+  </head>
     <style>
-        *{
-            box-sizing: border-box;
-            margin:0;
-            padding: 0;
-        }
-        body {
-        --color1: #fff;
-        --color2: #181818;
-      }
-      footer {
-        position: relative;
-        width: 100%;
-        background: black;
-        min-height: 100px;
-        padding: 20px 50px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-      }
-      footer .social_icon,
-      footer .menu {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin: 10px 0;
-        flex-wrap: wrap;
-      }
+        
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "montserrat";
+  color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+
+  width: 100%;
+  
+  overflow-x: hidden;
 
 
-      footer .social_icon li,
-      footer .menu li {
-        list-style: none;
-      }
-      footer .social_icon li a {
-        font-size: 2em;
-        color: #fff;
-        margin: 0 10px;
-        display: inline-block;
-        transition: 0.5s;
-      }
-      footer .social_icon li a:hover {
-        transform: translateY(-10);
-      }
-      footer .menu li a {
-        font-size: 1.2em;
-        color: #fff;
-        margin: 0 10px;
-        display: inline-block;
-        text-decoration: none;
-        opacity: 0.75;
-      }
-      footer .menu li a:hover {
-        opacity: 1;
-      }
-      footer p {
-        color: #fff;
-        text-align: center;
-        margin-top: 15px;
-        margin-bottom: 10px;
-        font-size: 1.1em;
-      }
-      footer .wave {
-        position: absolute;
-        top: -100px;
-        left: 0;
-        width: 100%;
-        height: 100px;
-        background: url('https://res.cloudinary.com/dmnep85ym/image/upload/v1713783080/wave_j0z4mz.png'); /* Use the wave image as background */
-        background-size: 1000px 100px;
-      }
-      footer .wave#wave1 {
-        z-index: 1000;
-        opacity: 1;
-        bottom: 0;
-        animation: animateWave 4s linear infinite;
-      }
-      footer .wave#wave2 {
-        z-index: 999;
-        opacity: 0.5;
-        bottom: 10px;
-        animation: animateWave_02 4s linear infinite;
-      }
-      footer .wave#wave3 {
-        z-index: 1000;
-        opacity: 0.2;
-        bottom: 15px;
-        animation: animateWave 3s linear infinite;
-      }
-      footer .wave#wave4 {
-        z-index: 999;
-        opacity: 0.7;
-        bottom: 20px;
-        animation: animateWave_02 3s linear infinite;
-      }
-      @keyframes animateWave {
-        0% {
-          background-position-x: 1000px;
-        }
-        100% {
-          background-position-x: 0px;
-        }
-      }
-      @keyframes animateWave_02 {
-        0% {
-          background-position-x: 0px;
-        }
-        100% {
-          background-position-x: 1000px;
-        }
-      }
-      .page4_header {
-        width: 100%;
-        text-align: center;
-        margin-top: 250px;
-        margin-bottom: 0px;
-        font-size: 200px;
-      }
-     header{
-        width:100%;
-        height:100px;
-        display:flex;
-        justify-content: space-between;
-        align-items: center;
-        position: fixed;
-        z-index: 99;
-        box-shadow: 0 0 10px #000;
-        background: rgba(0,0,0,0.5);
-
-     }
+}
+     
      #chk1{
         display:none;
      }
@@ -174,169 +64,266 @@
         text-transform:uppercase;
         font-size: 15px;
      }
-     header .search-box{
-        flex:1;
-        position: relative;
-        
+     #about-us p{
+      margin-top:-1em;
      }
-     .search-box input{
-        width:100%;
-        height:40px;
-        border:none;
-        outline: none;
-        background: #f2f2f2;
-        border-radius: 30px;
-        color:grey;
-        font-size: 16px;
-        text-align: center;
-        padding-left: 5px;
-        padding-right: 40px;
-       
-     }
-     .search-box button{
-        cursor:pointer;
-        width:40px;
-        height: 40px;
-        border-radius: 30px;
-        border: none;
-        position: absolute;
-        top:0;
-        right:0;
-        transform: scale(0.9);
-        background: rgb(14, 14, 14);
-     }
-     header ul{
-        flex:2;
-        display: flex;
-        justify-content: space-between;
-     }
-     header ul li{
-        list-style: none;
-     }
-     header ul li a{
-        text-decoration: none;
-        color:#fff;
-        font-weight: 600;
-        text-transform: uppercase;
-        padding:10px 15px;
-     }
-     header ul li a:hover{
-        border-bottom: 2px solid cadetblue;
-     }
-     header .menu{
-        font-size:2.5rem;
-        display: none;
-     }
-     @media(max-width:1000px){
-        .search-box button{
-            position: absolute;
-        }
-        header ul{
-            position: fixed;
-            top:100px;
-            right:-100%;
-            background: rgba(0,0,0,0.5);
-            height: calc(100vh - 100px);
-            width:50%;
-            flex-direction: column;
-            align-items: center;
-            transition: right 0.5s linear;
-        }
-        header .menu{
-            display: block;
-            width:100px;
-            text-align: center;
-        }
-        #chk1:checked ~ ul{
-            right:0;
-        }
-     }
-     @media(max-width:600px){
-        header .logo{
-            font-size: 10px;
-            margin-left: 8px;
-        }
-        header ul{
-            width:100%;
-        }
-     }
-     .logo img{
-        height:40px;
-        width:40px;
-        margin-top: 20px;
-        margin-left: 25px;
-     }
-     /* ////////////// */
-     @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
 
-:root {
-  --color: #3c3163;
-  --transition-time: 0.5s;
+     /* importing style.css */
+
+
+     video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: -1;
+  position: fixed;
 }
 
-* {
-  box-sizing: border-box;
+#main {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.39);
 }
 
-body {
-  margin: 0;
+#page1 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  z-index: 10;
+}
+
+#page2 {
   min-height: 100vh;
-  font-family: 'Open Sans', sans-serif;
-  background: #fafafa;
+  width: 100%;
+  z-index: 10;
 }
 
-a {
-  color: inherit;
+#scroller {
+  /* background-color: red; */
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  position: relative;
+  z-index: 10;
 }
+#scroller::-webkit-scrollbar {
+  display: none;
+}
+#scroller-in {
+  display: inline-block;
+  white-space: nowrap;
+  animation-name: scroll;
+  animation-duration: 40s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  
+}
+
+#scroller h4 {
+  display: inline-block;
+  font-size: 120px;
+  font-weight: 900;
+  font-family: gilroy;
+  margin-right: 20px;
+  transition: all linear 0.3s;
+  color: #faf7f7;
+  -webkit-text-stroke: 2px #ffffff;
+  opacity:0.5;
+}
+#scroller h4:hover {
+  color: #f2f4f0;
+  -webkit-text-stroke: 2px #1c1c1b;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+#about-us {
+  
+  width: 100%;
+  /* background-color: red; */
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+  justify-content: space-around;
+}
+
+#about-us-in {
+  width: 50%;
+  text-align: center;
+}
+#about-us-in h3 {
+  font-size: 54px;
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+#about-us-in p {
+  font-size: 20px;
+}
+
+.about-header{
+display:flex;
+justify-content: center;
+flex-direction: row;
+align-items:center;
+margin: 100px auto;
+position:relative;
+
+}
+.header1{
+display:flex;
+justify-content: center;
+flex-direction: row;
+align-items:center;
+margin: 100px auto;
+
+}
+.card1{
+width:200px;
+border:2px solid black;
+}
+
+
+.about-us2 h2 {
+margin-bottom: auto;
+}
+
+.card-img-top {
+width: 100%;
+height: 200px; /* Adjust the height as needed */
+object-fit: cover; /* Ensure the image covers the entire space */
+border-radius: 15px;
+}
+.card-another .card-body {
+background-color: black;
+color: white;
+text-align: center;
+border-radius: 15px;
+}
+
+.about-cards-container {
+display: flex; /* Use flexbox to align flex items */
+flex-wrap: wrap; /* Allow flex items to wrap to the next line if necessary */
+justify-content: space-around; /* Distribute flex items evenly with space around them */
+margin: 50px; /* Add margin to the container for spacing */
+width: 100%;
+
+ 
+}
+.card-another {
+
+height: 300px; /* Set the desired height of each card */
+margin-bottom: 20px; /* Add margin at the bottom of each card */
+margin-right: 0px; /* Add margin between cards */
+border-radius: 15px; /* Add rounded corners to the cards */
+transition: 0.3s;
+cursor: pointer;
+}
+
+
+.card-another:hover {
+background-color: #f68b10;
+opacity: 0.5;
+}
+.paragraph-container {
+display: flex;
+justify-content: flex-end;
+
+width: 60%; /* Adjust the width as needed */
+margin-left: auto; /* Push the container to the right */
+
+}
+.paragraph {
+display: flex;
+flex-direction: column;
+flex: 1;
+justify-content: flex-end; /* Align the container to the end (right side) */
+padding: 0 20px; /* Add padding for spacing */
+
+margin-bottom: 3rem; /* Add padding for spacing */
+
+}
+.paragraph-container2 {
+display: flex;
+flex-direction: column;
+flex: 1;
+justify-content: flex-end; /* Align the container to the end (right side) */
+padding: 0 20px; /* Add padding for spacing */
+margin-top:3rem;
+margin-bottom: 3rem; /* Add padding for spacing */
+
+}
+.img-about {
+width: 35%; /* Set the width of the container */
+margin: 0 auto; /* Center the container horizontally */
+float: left;
+position:relative;
+height:auto
+}
+.img-about img {
+width: 100%; /* Ensure the image fills the container width */
+height: 620px; /* Maintain aspect ratio */
+display: block; /* Ensure the image is block-level */
+}
+
+.about-aboutus {
+width: 100%;
+height: 20vh;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center; /* Center align the text */
+}
+
+.about-aboutus h1 {
+font-weight: bold; /* Make the text bold */
+}
+
 
 .cards-wrapper {
-  display: grid;
+  display:flex;
   justify-content: center;
   align-items: center;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 4rem;
-  padding: 4rem;
-  margin: auto;
+  margin:2em 0em;
+  gap:0.8em;
   flex-wrap: wrap;
 }
+
 .card {
   font-family: 'Heebo', sans-serif;
   --bg-filter-opacity: 0.5;
   /* background-image: url('https://source.unsplash.com/600x400/?computer'); */
-  height: 20em;
-  background-color: rgb(249, 124, 15);
+
   object-fit: cover;
   width: 15em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: white;
   border-radius: 1em;
   padding: 1em;
   display: flex;
-  align-items: flex-end;
-  background-size: cover;
-  background-position: center;
+
   box-shadow: 0 0 5em -1em black;
   transition: all var(--transition-time);
-  position: relative;
-  overflow: hidden;
-  border: 10px solid #ccc;
-  text-decoration: none;
+  position: relative; 
+  border: 1px solid #ccc;
+  
   margin:auto !important;
-  height: 25rem !important;
+  height: 20rem;
+  
 }
 
-.card h1 {
-  margin: 0;
-  font-size: 1.5em;
-  line-height: 1.2em;
-}
-
-.card p {
-  font-size: 0.75em;
-  font-family: 'Open Sans', sans-serif;
-  margin-top: 0.5em;
-  line-height: 2em;
-}
 
 .card .tags {
   display: flex;
@@ -379,6 +366,8 @@ a {
   margin-left: 1rem;
 }
 
+
+
 .info {
   font-size: 1.2em;
   display: flex;
@@ -394,45 +383,6 @@ a {
 .info h1 {
   font-size: 1em;
   font-weight: normal;
-}
-
-/* MEDIA QUERIES */
-@media screen and (max-width: 1285px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .cards-wrapper {
-    grid-template-columns: 1fr;
-  }
-  .info {
-    justify-content: center;
-  }
-  .card-grid-space .num {
-    margin-left: 0;
-    text-align: center;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  .cards-wrapper {
-    padding: 4rem 2rem;
-  }
-  .card {
-    max-width: calc(100vw - 4rem);
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .info {
-    display: block;
-    text-align: center;
-  }
-  .info h1 {
-    margin: 0;
-  }
 }
 
      /* /////////////// */
@@ -459,10 +409,7 @@ body {
 }
 
 /* DEFAULT STYLE */
-:root {
-  font-size: 16px;
-  --card-img-height: 200px;
-}
+
 .card-container {
   width: 100%;
   height: 100vh;
@@ -613,13 +560,15 @@ body {
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap");
 
 .container {
-  display: flex;
-  flex-wrap: wrap;
+
+  display:flex;
   justify-content: center;
-  width: 1200px;
-  margin-block: 2rem;
-  gap: 2rem;
+  text-align: center;
+  gap: 1em;
+  margin-bottom: 2em;
+  flex-wrap: wrap;
 }
+
 
 img {
   max-width: 100%;
@@ -632,20 +581,43 @@ img {
   flex-direction: column;
   width: 300px;
   overflow: hidden;
- 
   border-radius: 1em;
   background: black;
-
-  margin-right: 35px;
-  margin-left: 35px;
+  height: 30em;
+  
 }
 
 .card__body {
   padding: 1rem;
+  padding-bottom: 5em;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background: black;
   gap: .5rem;
+  box-shadow: 0px -10px 25px 10px black;
+
+}
+
+
+.content_body{
+  overflow-y: auto;
+  flex: 1;
+  height: 65%;
+  
+}
+.content_body::-webkit-scrollbar {
+          width: 0; 
+        }
+.content_header{
+  height: 35%;
+  overflow: hidden;
+  flex: 1;
+
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .tag {
@@ -653,16 +625,15 @@ img {
   padding: .25em .75em;
   border-radius: 1em;
   font-size: .75rem;
+  
 }
 
-.tag + .tag {
-  margin-left: .5em;
-}
 
 .tag-blue {
-  background: #56CCF2;
-  background: linear-gradient(to bottom, #2F80ED, #56CCF2);
+  background: #b3d4dfb6;
+  background: linear-gradient(to top, #232022a1, #d1e3e9b4);
   color: #fafafa;
+  
 }
 
 .tag-brown {
@@ -678,9 +649,12 @@ img {
 }
 
 .card__body h4 {
-  font-size: 1.5rem;
-  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  line-height: 1.5em;
 }
+
 
 .card__footer {
   display: flex;
@@ -701,43 +675,39 @@ img {
   color: #666;
 }
 .card_new_header{
- font-weight: bold;
+  font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto;
-  font-size: 70px;
+ 
+  margin-bottom: .7em;
+  font-size: 50px;
+   
 }
-@media screen and (max-width: 700px) {
-  #page4 {
-    display: flex; /* Display the page4 container as a flex container */
-    flex-direction: column; /* Stack elements vertically */
-    margin: 20px; /* Add some margin between each elem */
-    height: 300vh;
-  }
-  .elem {
-    display: block; /* Display each elem class in a column */
-   /* Add some margin between each elem */
-    margin-top: 50px; 
-    margin-bottom: 50px;
-    width:300px ;
-    height: 500px ;
+
+
+.prin, .card_new_header{
+  margin-top:2em;
+  text-shadow: 0 0 5px hsla(0, 10%, 94%, 0.097),  
+                 0 0 10px #f0eded13,
+                 0 0 15px #b8b0b800, 
+                 0 0 20px #87838700, 
+                 0 0 25px #aaaaa764, 
+                 0 0 30px #cfcfc528, 
+                 0 0 35px #d6d6d31e;
     
-  }
-  .page4_header{
-    margin-top: 230px !important;
-    font-size: 500px;
-    font-weight: bold;
-    margin-bottom: 0px;
-  }
-  .elem h2{
-    font-size: 30px;
-    font-weight: bold;
-  }
 }
 .increase{
   font-size: 50px  !important;
   font-weight: bold   !important;
+  text-shadow: 0 0 5px hsla(0, 10%, 94%, 0.097),  
+                 0 0 10px #f0eded13,
+                 0 0 15px #b8b0b800, 
+                 0 0 20px #87838700, 
+                 0 0 25px #aaaaa764, 
+                 0 0 30px #cfcfc553, 
+                 0 0 35px #d6d6d33a; 
+  
 }
 /* ///////////// */
 
@@ -817,10 +787,185 @@ main {
 
 }
 
+.link{
+  margin-top: 1.5em;
+  display: flex;
+  gap: 1em;
+}
+
+#main p{
+  font-size: 1em;
+}
+
+.bg{
+  background: linear-gradient(to bottom, transparent, rgba(219, 189, 133, 0.16),rgba(37, 37, 37, 0.564), black);
+}
+
+
+.card h1 {
+  margin: 0;
+  font-size: 1.5em;
+  line-height: 1.2em;
+}
+
+.about p {
+  
+  font-size: 0.5em;
+  margin-top: 0.5em;
+  line-height: 2em;
+}
+
+
+.hiring{
+    font-size:1.1em;
+}
+
+
+.hiring{
+    span{
+        color:#7185f3;
+    }
+    span:hover{
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+#page1{
+  padding-top:2em;
+ 
+}
+
+#page3 {
+  height: 100vh;
+  width: 100%;
+  background-color: #ea8760d1;
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  margin-top:4em;
+  
+}
+#page3 > p {
+  font-size: 25px;
+  font-weight: 700;
+  width: 60%;
+  line-height: 45px;
+  text-align: center;
+}
+
+#page3 img {
+  position: absolute;
+  height: 60px;
+}
+#page3 #colon1 {
+  left: 12%;
+  top: 20%;
+}
+#page3 #colon2 {
+  bottom: 25%;
+  right: 15%;
+}
+
+.achieve{
+  height:20em;
+
+}
+
+.eve{
+  box-shadow: none;
+}
+
+
 .material-symbols-outlined {
   vertical-align: middle;
 }
-@media screen and (max-width: 768px) {
+
+.co_body{
+  height:25%;
+}
+
+.size{
+  width:25em;
+  height:20em;
+  border-radius: none;
+}
+
+.more{
+
+  margin-top:1em;
+  display: flex ;
+  justify-content: center;
+}
+
+.more a{
+  text-decoration: none;
+  color:white;
+}
+
+.card__body p{
+  font-size: 30em;
+}
+
+.full{
+  margin-bottom: .5em;
+}
+
+
+/* MEDIA QUERIES */
+@media (max-width: 1285px) {
+  .card{
+    width:10em;
+  }
+}
+
+@media (max-width: 950px){
+  .smile{
+    letter-spacing: .1em;
+  }
+  
+#page3 {
+  height: 80vh;
+  
+}
+#page3 > p {
+  font-size: 23px;
+  line-height: 35px;
+}
+
+
+}
+
+@media (max-width: 900px) {
+  .cards-wrapper {
+    grid-template-columns: 1fr;
+  }
+  .info {
+    justify-content: center;
+  }
+  .smile{
+    letter-spacing: 0em;
+  }
+  
+.card {
+  
+  width: 10em;
+  font-size: 1.1em;
+  height: 20em;
+  
+}
+
+.size{
+  width:20em;
+  height:15em;
+  
+  
+}
+
+}
+
+@media (max-width: 768px) {
   #page4 {
     width: 100%; /* Adjust width as needed */
     margin: auto; /* Center the container horizontally */
@@ -834,218 +979,450 @@ main {
     align-items: center;
     justify-content: center;
   }
+
+  .full{
+    margin: 0 1em;
+    margin-bottom: .5em;
+  }
+
+  .prin, .card_new_header{
+    font-size: 35px !important;
+    margin-top: 1.5em;
+  }
+
+#page3 > p {
+  font-size: 17px;
+  line-height: 26px;
+}
+
+#page3 img {
+  height: 38px;
+}
+#page3 #colon1 {
+  left: 10%;
+  top: 24%;
+}
 }
 
 
+
+@media (max-width: 700px) {
+  #page4 {
+    display: flex; /* Display the page4 container as a flex container */
+    flex-direction: column; /* Stack elements vertically */
+    margin: 20px; /* Add some margin between each elem */
+    height: 300vh;
+  }
+  
+  .elem {
+    display: block; /* Display each elem class in a column */
+   /* Add some margin between each elem */
+    margin-top: 50px; 
+    margin-bottom: 50px;
+    width:300px ;
+    height: 500px ;
+    
+  }
+  .page4_header{
+    margin-top: 230px !important;
+    font-size: 500px;
+    font-weight: bold;
+    margin-bottom: 100px;
+  }
+  .elem h2{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  #scroller h4 {
+  
+  font-size: 70px;
+
+  }
+
+  .prin, .card_new_header{
+    font-size: 30px !important;
+    margin-top: 1.5em;
+  }
+  
+  #about-us p{
+      font-size:.8em;
+      
+     }
+
+     .cards-wrapper, .container {
+ 
+  gap:.8em;
+
+}
+
+.list-header{
+  font-size: 1em;
+}
+.smile{
+    font-size: 7em;
+  }
+  .footer{
+    height:23.5em;
+  }
+  .logo img{
+  height: 60px;
+  width: 60px;
+  
+}
+
+#page3 {
+  height: 65vh;
+  
+}
+
+}
+
+@media (max-width: 500px) {
+  .cards-wrapper {
+    padding: 4rem 2rem;
+  }
+  .card {
+    max-width: calc(100vw - 4rem);
+  }
+
+  .full{
+    margin: 0 .5em;
+    margin-bottom: .5em;
+  }
+
+  .link i{
+    font-size: .8em;
+  }
+
+  .cards-wrapper {
+  margin:0em 0em;
+  gap:.6em;
+
+} 
+
+.list-header{
+  font-size: .8em;
+}
+
+.list-points{
+  font-size: .8em;
+}
+
+.conclude-text{
+  font-size: 1.4em;
+  line-height: 1.2em;
+}
+
+.download-app{
+  display: none;
+}
+
+.conclude{ 
+    width:45%;
+
+
+}
+.smile{
+    font-size: 4.5em;
+  }
+  .footer{
+    height:21em;
+  }
+  
+
+  
+}
+
+@media (max-width: 450px) {
+  .info {
+    display: block;
+    text-align: center;
+  }
+  .info h1 {
+    margin: 0;
+  }
+  
+  .increase{
+    font-size: 30px  !important;
+  }
+
+  #main p{
+  font-size: .7em;
+  }
+
+  #page1 h2{
+    font-size: 1.1em;
+  }
+
+  #scroller h4 {
+  
+  font-size: 40px;
+  font-weight: 900;
+  transition: all linear 0.3s;
+  -webkit-text-stroke: 2px #ffffff;
+
+  }
+
+  #about-us p{
+      font-size:.6em;
+      
+     }
+  
+     .size{
+  width:18em;
+  height:13em;
+  
+} 
+
+.tag{
+  display: none;
+}
+
+#page3 > p {
+  font-size: 15px;
+  line-height: 20px;
+}
+
+#page3 img {
+  height: 33px;
+}
+
+#page3 #colon1 {
+  left: 10%;
+  top: 20%;
+}
+.company{
+  display: none;
+}
+ 
+}
+
+
+
+
+    body::-webkit-scrollbar {
+          width: 0; 
+        }
+
     </style>
-  </head>
 
   {%include 'navbar.html' %}
+
   <body>
-    {% comment %} <div id="cursor"></div>
-    <div id="cursor-blur"></div> {% endcomment %}
 
     <video autoplay loop muted src="https://res.cloudinary.com/dmnep85ym/video/upload/v1713779156/help_f6ejrf.mp4"></video>
     <div id="main">
+
+      <!-- hero section -->
       <div id="page1">
+
         <h2>Welcome to </h2>
         <p class="increase">SMILE CLUB</p>
-        <h2>ANCIENT SCIENCE AND TECHNOLOGY FOR MODERN INDIA LIFE ENLIGHTENMENT
-          </h2>
-        <p>Lets have a smile of satisfaction</p>
-        <div id="arrow">
-          <i class="ri-arrow-down-line"></i>
+        <h2 class="full">ANCIENT SCIENCE AND TECHNOLOGY FOR MODERN INDIA LIFE ENLIGHTENMENT</h2>
+        <p>Let's have a smile of satisfaction</p>
+        
+        <div class="link">
+          <a href="https://www.linkedin.com/company/smile-club-nitk/"><i class="fab fa-linkedin"></i></a>
+          <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.instagram.com/smile._.club_nitk/"><i class="fab fa-instagram"></i></a>
         </div>
+
       </div>
-      <div id="page2">
-        <div id="scroller">
-          <div id="scroller-in">
-            <h4>WELCOME TO SMILE CLUB FAMILY !</h4>
+
+      <div class="bg"> 
+        <div id="page2">
+
+          <!-- moving text -->
+          <div id="scroller">
+            <div id="scroller-in">
+              <h4>WELCOME TO SMILE CLUB FAMILY !</h4>
+            </div>
+            <div id="scroller-in">
+              <h4>WELCOME TO SMILE CLUB FAMILY !</h4>
+            </div>
           </div>
-          <div id="scroller-in">
-            <h4>WELCOME TO SMILE CLUB FAMILY !</h4>
+        
+          <!-- our principles -->
+          <div id="about-us">
+            <div id="about-us-in">
+              <h3 class="prin">Our Principle</h3>
+              <p>
+                स्वस्मै स्वल्पं समाजाय सर्वस्वं।
+              </p>
+            </div>
           </div>
-        </div>
-        <div id="about-us">
-          <!-- <img src="https://eiwgew27fhz.exactdn.com/wp-content/uploads/2023/02/home-about-1-300x200.jpg?strip=all&lossy=1&sharp=1&ssl=1"
-                    alt="" /> -->
-          <div id="about-us-in">
-            <h3>Our Principle</h3>
-            <p>
-             Svasmai svalpam samajaya sarvasvam |
-            </p>
-          </div>
-        </div>
        
-        <section class="cards-wrapper">
-          <div class="card-grid-space">
+          <section class="cards-wrapper">
+            <div class="card-grid-space">
             
-            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
-              <div>
-                <h1> Vision</h1>
-                <p>Our principles are our guiding light in crafting our vision statement,it is to celebrate and distribute the joy of the Indian culture.</p>
+              <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
+                <div class="about">
+                  <h1> Vision</h1>
+                  <p>Our principles are our guiding light in crafting our vision statement,it is to celebrate and distribute the joy of the Indian culture.</p>
                 
-              </div>
-            </a>
-          </div>
-          <div class="card-grid-space">
-           
-            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');  ">
-              <div>
-                <h1>About us</h1>
-                <p>A culturally aware club sharing joy and greatness through our culture. Serving society brings us immense satisfaction.
-                </p>
-               
-              </div>
-            </a>
-          </div>
-          <div class="card-grid-space">
-            
-            <a class="card" href="#" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');  ">
-              <div>
-                <h1>Content</h1>
-                <p>Our content explores diverse topics, offering insightful perspectives and fostering intellectual curiosity.</p>
-                
-              </div>
-            </a>
-          </div>
-          <div class="card-grid-space">
-            
-            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
-              <div>
-                <h1>Events</h1>
-                <p>Our events spark curiosity and connection, offering enriching experiences for all. Join us for engaging gatherings that inspire and educate.</p>
-                
-              </div>
-            </a>
-          </div>
-          <div class="card-grid-space">
-            
-            <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
-              <div>
-                <h1>Courses</h1>
-                <p>Our courses provide comprehensive learning experiences, tailored to meet diverse interests and skill levels.</p>
-               
-              </div>
-            </a>
-          </div>
-          <div class="card-grid-space">
-            
-            <a class="card" style="--bg-img: url(''); ">
-              <div>
-                <h1>Gallery</h1>
-                <p>Explore our vibrant gallery showcasing the essence of our community, captured in moments of creativity, diversity, and shared experiences.</p>
-                
-              </div>
-            </a>
-          </div>
-          </section>
-       
-        <!-- //////////////// -->
-       <div class="card_new_header">
-        <p>Our Latest Blogs</p>
-       </div>
-        <div class="container">
-          {% for blog in latest_blogs %}
-          <div class="card_new">
-            <div class="card__header">
-              <a href="{% url 'post-detail' blog.id %}" style="text-decoration: none; color: inherit;">
-              <img src="{{ blog.cover_image.url }}" alt="card__image" class="card__image" width="600">
+                </div>
               </a>
             </div>
-            <div class="card__body">
-              <div class="tag">
-                {% for tag in blog.tags.all %}
-              <span class="tag tag-blue">{{ tag }}</span> <!-- Changed blog.tags to tag -->
-              {% if not forloop.last %},{% endif %}
-              {% endfor %}
-            </div>
-            <a href="{% url 'post-detail' blog.id %}" style="text-decoration: none; color: inherit;">
 
-            <h4>{{ blog.title }}</h4>
-            <p>{{ blog.abstract }}</p>
-            </a>
+            <div class="card-grid-space">
+           
+              <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');  ">
+                <div class="about">
+                  <h1>About us</h1>
+                  <p>A culturally aware club sharing joy and greatness through our culture. Serving society brings us immense satisfaction.
+                  </p>
+               
+                </div>
+              </a>
             </div>
+            
+            <div class="card-grid-space">
+            
+              <a class="card" href="#" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');  ">
+                <div class="about">
+                  <h1>Content</h1>
+                  <p>Our content explores diverse topics, offering insightful perspectives and fostering intellectual curiosity.</p>
+                
+                </div>
+              </a>
+            </div>
+            
+            <div class="card-grid-space">
+            
+              <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
+                <div class="about">
+                  <h1>Events</h1>
+                  <p>Our events spark curiosity and connection, offering enriching experiences for all. Join us for engaging gatherings that inspire and educate.</p>
+                
+                </div>
+              </a>
+            </div>
+            
+            <div class="card-grid-space">
+            
+              <a class="card" style="--bg-img: url('https://source.unsplash.com/600x400/?computer');">
+                <div class="about">
+                  <h1>Courses</h1>
+                  <p>Our courses provide comprehensive learning experiences, tailored to meet diverse interests and skill levels.</p>
+               
+                </div>
+              </a>
+            </div>
+          
+            <div class="card-grid-space">
+            
+              <a class="card" style="--bg-img: url(''); ">
+                <div class="about">
+                  <h1>Gallery</h1>
+                  <p>Explore our vibrant gallery showcasing the essence of our community, captured in moments of creativity, diversity, and shared experiences.</p>
+                
+                </div>
+              </a>
+            </div>
+          </section>
+       
+        <!-- blogs -->
+          <div class="outer">
+            <div class="card_new_header">
+              <p>Our Latest Blogs</p>
+            </div>
+            <div class="container ">
+              {% for blog in latest_blogs %}
+              <div class="card_new ">
+                <div class="card__header content_header">
+                  <a href="{% url 'post-detail' blog.id %}" style="text-decoration: none; color: inherit;">
+                    <img src="{{ blog.cover_image.url }}" alt="card__image" class="card__image" width="600">
+                  </a>
+                </div>
+                <div class="card__body content_body blog">
+                  <div class="tag">
+                    {% for tag in blog.tags.all %}
+                    <span class="tag tag-blue">{{ tag }}</span> <!-- Changed blog.tags to tag -->
+              <!-- {% if not forloop.last %},{% endif %} -->
+                    {% endfor %}
+                  </div>
+                  <a href="{% url 'post-detail' blog.id %}" style="text-decoration: none; color: inherit;">
+
+                    <h4>{{ blog.title }}</h4>
+                    <p>{{ blog.abstract }}</p>
+                  </a>
+                </div>
+              </div>
+                {% comment %} </a> {% endcomment %}
+                {% endfor %}
+          
+            </div>
+            <p class="more"><a href="{% url 'blogs-list' %}">See all blogs  <i class="fa-solid fa-arrow-right" style="color: white;"></i></a></p>
           </div>
-        {% comment %} </a> {% endcomment %}
-          {% endfor %}
-
-        </div>
         
   
-        
-      <div id="page3">
-        <p>
-          {{ quote.quote }}
-        </p>
-        <img
-          id="colon1"
-          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg"
-          alt=""
-        />
-        <img
-          id="colon2"
-          src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg"
-          alt=""
-        />
-      </div> 
-      <div id="page4">
-        <h1 class="page4_header">OUR ACHIEVEMENTS</h1>
+          <!-- quote -->
+          <div id="page3">
+            <p>
+              {{ quote.quote }}
+            </p>
+            <img
+            id="colon1"
+            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-left.svg"
+            alt=""
+            />
+            <img
+            id="colon2"
+            src="https://eiwgew27fhz.exactdn.com/wp-content/themes/puttosaurus/img/quote-right.svg"
+            alt=""
+            />
+          </div> 
+      
+          <div class="outer">
+        <div class="card_new_header">
+          <p>Our Achievements</p>
+         </div>
+         <div class="container">
         {% for achievement in achievements %}
-
-        <div class="elem">
-          <h2>{{ achievement.name }}</h2>
-          <img src="{{ achievement.image.url }}" alt="" />
-        </div>
-        {% endfor %}
-       
-      </div>
-      <div id="page4">
-        <h1 class="page4_header">Our Recent events</h1>
-        {% for event in latest_events %}
-
-        <main>
-          <div class = "card2">
-            <img src="{{ event.image.url }}" alt="">
-            <div class="card-content2">
-              <h2>
-                {{ event.name }}              </h2>
-              <p>
-                {{ event.tagline }}              </p>
-              
-            </div>
+        <div class="card_new achieve">
+          <div class="card__header content_header">
+            
+              <img src="{{ achievement.image.url }}" alt="" />
+            
           </div>
-        </main>
-        {% endfor %}
+          <div class="card__body co_body eve">
+          <h4>{{ achievement.name }}</h4>
+          </div>
+          {% endfor %}
+        </div>
 
       </div>
     </div>
 
-    
-    
-    <footer>
-      <div class="waves">
-        <div class="wave" id="wave1"></div>
-        <div class="wave" id="wave2"></div>
-        <div class="wave" id="wave3"></div>
-        <div class="wave" id="wave4"></div>
+  <div class="outer">
+      <div class="card_new_header">
+        <p>Our Recent Events</p>
+       </div>
+       <div class="container ">
+        {% for event in latest_events %}
+        <div class="card_new size">
+        <div class="card__header content_header">
+          
+          <img src="{{ event.image.url }}" alt="">
+          
+        </div>
+        <div class="card__body co_body eve">
+        <h4>{{ event.name }}</h4>
+        <p> {{ event.tagline }} </p>
+        </div>
       </div>
-      <ul class="social_icon">
-          <li><a href="https://www.linkedin.com/company/smile-club-nitk/"><i class="fab fa-linkedin"></i></a></li>
-          <li> <a href="https://youtube.com/@SMILEClub_NITK?si=qk-v-oJZi8M7igKn"><i class="fab fa-youtube"></i></a></li>
-            <li> <a href="https://www.instagram.com/p/C52tiEtLNU5/?igsh=YzljYTk1ODg3Zg=="><i class="fab fa-instagram"></i></a></li>
-      </ul>
-      <ul class="menu">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'team-list' %}">About us </a></li>
-        <li><a href="{% url 'blogs-list' %}">Blog</a></li>
-        <li><a href="{% url 'event-list' %}">Timeline</a></li>
-        <li><a href="{% url 'gallery' %}">Gallery</a></li>
-        <li><a href="{% url 'display_youtube_videos' %}">Videos</a></li>
-        
-      </ul>
-      <p>@2024 Smile Club | All rights reserved</p>
-    </footer>
+        {% endfor %}
+      
+    </div>
+    </div>
+    
+    </div>
+
+  </div>
+  </div>
+    
+
+   {%include 'footer.html' %}
 
     {% comment %} <script
       src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
@@ -1068,5 +1445,6 @@ main {
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script> {% endcomment %}
+   
   </body>
 </html>
