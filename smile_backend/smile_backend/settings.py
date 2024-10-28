@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-#e((2$$5&qy9p951mc3*5cj&@pf8_(0dp=f4wb#@-vtw8otxey
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['smileclub.nitk.ac.in' , 'www.smileclub.nitk.ac.in' , '0.0.0.0']
+ALLOWED_HOSTS = ['smileclub.nitk.ac.in' , 'www.smileclub.nitk.ac.in' , '0.0.0.0' , '127.0.0.1']
 
 
 # Application definition
