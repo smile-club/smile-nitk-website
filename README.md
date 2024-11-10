@@ -1,5 +1,5 @@
-# backend
-references
+
+# References
 - https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Home_page
 - https://medium.com/@devsumitg/how-to-connect-reactjs-django-framework-c5ba268cb8be
 - https://medium.com/@samradnus2001/how-to-secure-your-react-and-django-web-application-from-common-attack-cd6f31db0cf8
