@@ -7,6 +7,8 @@ references
 
 # Setup
 
+#### Note : Before pushing add a .gitignore file following the instructions given at the end.
+
 ## On Windows
 
 ### Create a Virtual Environment 
@@ -63,9 +65,7 @@ python3 manage.py makemigrations
 ```
 python3 manage.py migrate
 ```
-```
-python manage.py createsuperuser
-```
+
 ```
 python3 manage.py runserver
 ```
@@ -85,10 +85,11 @@ python3 -m pip freeze > requirements.txt
 ## Contents for .gitignore
 #### Before pushing add a .gitignore file
 #### Make sure the file is in SMILE-NITK-WEBSITE folder
+#### Make a new file with name '.gitignore ', copy the content given below and paste it in the file.
 
 ```
 # Ignore virtual environment
-.venv/
+venv/
 
 # Ignore database file
 
